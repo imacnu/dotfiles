@@ -12,10 +12,10 @@ Plug 'dense-analysis/ale'
 Plug 'tpope/vim-surround'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'} " Multi cursores  https://github.com/mg979/vim-visual-multi
 Plug 'jiangmiao/auto-pairs'
-Plug 'scrooloose/nerdtree'
+"Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+"Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+"Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
@@ -114,19 +114,16 @@ nnoremap <leader>h :bprevious<CR>
 nnoremap <leader>q :bdelete<CR>
 nnoremap <leader>t :tab split<CR>
 
-
 "Moverse entre ventanas/paneles 
 nnoremap <C-J> <C-W>j
 nnoremap <C-K> <C-W>k
 nnoremap <C-L> <C-W>l
 nnoremap <C-H> <C-W>h
-" Startify
-" `SPC l s` - save current session
 nnoremap <leader>ss :SSave<CR>
-" `SPC l l` - list sessions / switch to different project
 nnoremap <leader>sc :SClose<CR>
 noremap <silent> <leader>. :vertical resize +25<CR>
 noremap <silent> <leader>, :vertical resize -25<CR>
+
 "Linter -  go to next error
 nmap <silent> <C-e> <Plug>(ale_next_wrap)
 map <leader>ff :find 
@@ -236,32 +233,31 @@ let g:coc_snippet_next = '<tab>'
 " Formatting selected code.
 nmap <leader>f  <Plug>(coc-format-selected)
 "COC EXPLORER
-nmap <space>e :CocCommand explorer<CR>
 nmap <space>f :CocCommand explorer --preset floating<CR>
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 "====================================================== NERDTree config =======================================
-autocmd VimEnter * unlet g:NERDTreeUpdateOnCursorHold
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-let g:NERDTreeChDirMode=2
-let g:NERDTreeShowBookmarks=1
-let g:NERDTreeGitStatusUseNerdFonts=1
-let g:nerdtree_tabs_focus_on_files=1
-let NERDTreeAutoDeleteBuffer = 1
-let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
-let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
-let g:indentLine_fileTypeExclude = ['text', 'sh', 'help', 'terminal']
-let g:indentLine_bufNameExclude = ['NERD_tree.*', 'term:.*']
-map <C-b> :NERDTreeToggle %<CR>
-nnoremap <silent> <Leader>f :NERDTreeFind<CR>
-nmap <silent> <C-g> :call NERDTreeToggleInCurDir()<cr>
-function! NERDTreeToggleInCurDir()
-  if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1)
-    exe ":NERDTreeClose"
-  else
-    exe ":NERDTreeFind"
-  endif
-endfunction
+"autocmd VimEnter * unlet g:NERDTreeUpdateOnCursorHold
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+"let g:NERDTreeChDirMode=2
+"let g:NERDTreeShowBookmarks=1
+"let g:NERDTreeGitStatusUseNerdFonts=1
+"let g:nerdtree_tabs_focus_on_files=1
+"let NERDTreeAutoDeleteBuffer = 1
+"let NERDTreeMinimalUI = 1
+"let NERDTreeDirArrows = 1
+"let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
+"let g:indentLine_fileTypeExclude = ['text', 'sh', 'help', 'terminal']
+"let g:indentLine_bufNameExclude = ['NERD_tree.*', 'term:.*']
+"map <C-b> :NERDTreeToggle %<CR>
+"nnoremap <silent> <Leader>f :NERDTreeFind<CR>
+"nmap <silent> <C-g> :call NERDTreeToggleInCurDir()<cr>
+"function! NERDTreeToggleInCurDir()
+  "if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1)
+    "exe ":NERDTreeClose"
+  "else
+    "exe ":NERDTreeFind"
+  "endif
+"endfunction
 "======================================================================= STARTTIFY ==================================================================================
 " Read ~/.NERDTreeBookmarks file and takes its second column
 function! s:nerdtreeBookmarks()
