@@ -1,0 +1,25 @@
+{
+  "extensions": {
+    "%2FUsers%2Fmalvarez%2FDesktop": [
+      "jj"
+    ],
+    "%2FUsers%2Fmalvarez%2FDesktop%2FComponents%2Fbbva-web-components-app%2Fpackages%2Fbbva-amount": [
+      "cocin"
+    ]
+  },
+  "commands": {
+    "%2FUsers%2Fmalvarez%2FDesktop": [
+      "sn"
+    ]
+  },
+  "explorerFiles": {
+    "%2FUsers%2Fmalvarez%2FDesktop%2FComponents%2Fbbva-web-components-app%2Fpackages": [
+      "card"
+    ]
+  },
+  "explorerActions": {
+    "%2FUsers%2Fmalvarez%2FDesktop%2FComponents%2Fbbva-currency-converter": [
+      "j"
+    ]
+  }
+}

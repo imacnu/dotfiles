@@ -1,38 +1,24 @@
-call plug#begin('~/.config/nvim/bundle')
-Plug 'zanglg/nova.vim'
-Plug 'Brettm12345/moonlight.vim'
-Plug 'itchyny/lightline.vim'
-Plug 'maximbaz/lightline-ale'
-Plug 'mengelbrecht/lightline-bufferline'
-Plug 'ryanoasis/vim-devicons'
-Plug 'mhinz/vim-startify'
-Plug 'mattn/emmet-vim'
-Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
-Plug 'dense-analysis/ale'
-Plug 'tpope/vim-surround'
-Plug 'mg979/vim-visual-multi', {'branch': 'master'} " Multi cursores  https://github.com/mg979/vim-visual-multi
-Plug 'jiangmiao/auto-pairs'
-"Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/nerdcommenter'
-"Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-"Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
-Plug 'othree/html5.vim', { 'for': 'html' }
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'mxw/vim-jsx'
-Plug 'othree/javascript-libraries-syntax.vim'
-Plug 'claco/jasmine.vim'
-Plug 'sheerun/vim-polyglot'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'ctrlpvim/ctrlp.vim'
-call plug#end()
+" Config 
+source $HOME/.config/nvim/plugins/plugins.vim
+source $HOME/.config/nvim/main/main.vim
 
-" Config
-
+let g:terminal_color_0 = "#282828"
+let g:terminal_color_1 = "#cc241d"
+let g:terminal_color_2 = "#98971a"
+let g:terminal_color_3 = "#d79921"
+let g:terminal_color_4 = "#458588"
+let g:terminal_color_5 = "#b16286"
+let g:terminal_color_6 = "#689d6a"
+let g:terminal_color_7 = "#a89984"
+let g:terminal_color_8 = "#928374"
+let g:terminal_color_9 = "#fb4934"
+let g:terminal_color_10 = "#b8bb26"
+let g:terminal_color_11 = "#fabd2f"
+let g:terminal_color_12 = "#83a598"
+let g:terminal_color_13 = "#d3869b"
+let g:terminal_color_14 = "#8ec07c"
+let g:terminal_color_15 = "#ebdbb2"
+ 
 " ================ Turn Off Swap Files ============
 set autoindent
 set cindent
@@ -54,11 +40,18 @@ set softtabstop=0
 set spelllang=en,es
 set tabstop=2
 set title
+set clipboard=unnamedplus
+
 set guicursor=n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20
 highlight Comment ctermbg=DarkGray
 highlight Constant ctermbg=Blue
 highlight Normal ctermbg=Black
 highlight Special ctermbg=DarkMagenta
+
+autocmd FileType markdown setlocal spell
+autocmd FileType gitcommit setlocal spell
+autocmd FileType markdown setlocal complete+=kspell
+autocmd FileType gitcommit setlocal complete+=kspell
 "================================================================ MAIN =============================================================================================
 " Mostrar mejor mensajes de error
 let g:ale_lint_on_save = 1
@@ -99,6 +92,7 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 " ====================================================================KEYBINDINGs===================================================================================
 let mapleader=" "
 imap jj <Esc>
+imap kk <Esc>
 nnoremap <C-p> :Files<CR>
 nnoremap <C-s> :w<CR>
 imap <C-s> <Esc>:w<CR>
@@ -106,8 +100,8 @@ nnoremap <C-d> <C-n>
 map <C-d> <C-n>
 imap <C-d> <C-n>
 nnoremap <leader>e :e $MYVIMRC<CR> 
+nnoremap <C-ss> source $MYVIMRC<CR> 
 "Moverse entre pestañas (buffers)
-"nnoremap <Leader>b :ls<CR>:b<Space>
 nnoremap <Leader>b :buffers<CR>:buffer<Space>
 nnoremap <leader>l :bnext<CR>
 nnoremap <leader>h :bprevious<CR> 
@@ -123,11 +117,15 @@ nnoremap <leader>ss :SSave<CR>
 nnoremap <leader>sc :SClose<CR>
 noremap <silent> <leader>. :vertical resize +25<CR>
 noremap <silent> <leader>, :vertical resize -25<CR>
+noremap <silent> <leader>' :resize +25<CR>
+noremap <silent> <leader>/ :resize -25<CR>
 
 "Linter -  go to next error
-nmap <silent> <C-e> <Plug>(ale_next_wrap)
+nmap <leader>ee  <Plug>(ale_next_wrap)
 map <leader>ff :find 
-nmap <C-e> :CocCommand explorer<CR>
+map <C-e> :CocCommand explorer<CR>
+"Gis status
+nmap <leader>gs :G<CR>
 "" ================================================================= AUTO COMPLETE ==============================================================
 " Emmet config
 let g:user_emmet_leader_key=','
@@ -152,13 +150,15 @@ function! OpenTerminal()
 endfunction
 nnoremap <leader>n :call OpenTerminal()<CR>
 
-syntax on
-syntax enable
-set noshowmode 
 set termguicolors
-"colorscheme nova 
+syntax enable
+syntax on
+set noshowmode 
 colorscheme moonlight
+"colorscheme nova 
+"colorscheme synthwave84
 set background=dark
+
 let g:moonlight_terminal_italics=1
 let g:airline#extensions#tabline#enabled = 1  " Mostrar buffers abiertos (como pestañas)
 let g:airline#extensions#tabline#fnamemod = ':t'  " Mostrar sólo el nombre del archivo
@@ -233,8 +233,8 @@ let g:coc_snippet_next = '<tab>'
 " Formatting selected code.
 nmap <leader>f  <Plug>(coc-format-selected)
 "COC EXPLORER
-nmap <space>f :CocCommand explorer --preset floating<CR>
-autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
+"nmap <space>f :CocCommand explorer --preset floating<CR>
+"autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 "====================================================== NERDTree config =======================================
 "autocmd VimEnter * unlet g:NERDTreeUpdateOnCursorHold
 "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -259,12 +259,6 @@ autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | end
   "endif
 "endfunction
 "======================================================================= STARTTIFY ==================================================================================
-" Read ~/.NERDTreeBookmarks file and takes its second column
-function! s:nerdtreeBookmarks()
-    let bookmarks = systemlist("cut -d' ' -f 2 ~/.NERDTreeBookmarks")
-    let bookmarks = bookmarks[0:-2] " Slices an empty last line
-    return map(bookmarks, "{'line': v:val, 'path': v:val}")
-endfunction
 
 function! s:gitModified()
     let files = systemlist('git ls-files -m 2>/dev/null')
@@ -277,19 +271,31 @@ function! s:gitUntracked()
 endfunction
 
 " 'Most Recent Files' number
-let g:startify_files_number           = 18
+let g:startify_files_number           = 20
 
 " Update session automatically as you exit vim
 let g:startify_session_persistence    = 1
+let g:startify_session_autoload = 1
+let g:startify_change_to_vcs_root = 1
+let g:startify_enable_special = 0
 
-" Simplify the startify list to just recent files and sessions
 let g:startify_lists = [
-  \ { 'type': 'dir',       'header': ['=========== Recent files =========== '] },
-  \ { 'type': 'sessions',  'header': ['=========== Saved sessions =========== '] },
-  \ { 'type': function('s:nerdtreeBookmarks'), 'header': ['=========== NERDTree Bookmarks ===============']},
-  \ { 'type': function('s:gitModified'),  'header': [' ============== Git Modified =====================']},
-  \ { 'type': function('s:gitUntracked'), 'header': [' =============  Git Untracked ====================']},
-  \ ]
+          \ { 'type': 'files',     'header': ['   Files']            },
+          \ { 'type': 'dir',       'header': ['   Current Directory '. getcwd()] },
+          \ { 'type': 'sessions',  'header': ['   Sessions']       },
+          \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+          \ { 'type': function('s:gitModified'),  'header': [' ============== Git Modified =====================']},
+          \ { 'type': function('s:gitUntracked'), 'header': [' =============  Git Untracked ====================']},
+          \ ]
+
+let g:startify_bookmarks = [
+            \ { 'c': '/Users/malvarez/Desktop/Components/bbva-web-components-app' },
+            \ { 'i': '~/.config/nvim/init.vim' },
+            \ { 'o': '~/.config/coc/ultisnips/javascript.snippets' },
+            \ { 's': '~/.config/coc/ultisnips/snippets.snippets' },
+            \ { 'v': '~/.config/coc/ultisnips/vim.snippets' },
+            \ { 'z': '~/.zshrc' },
+            \ ]
 
 " Fancy custom header
 let g:startify_custom_header = [

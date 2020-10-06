@@ -1,0 +1,54 @@
+snippet afn "Arrow function"
+(${1}) => {
+	${2}
+}
+endsnippet
+
+snippet log "Basic console log"
+console.log('${1}')
+endsnippet
+
+snippet logg "Advanced console Log (params)"
+console.log('${1}', ${2:''})
+endsnippet
+
+snippet deb "Debugger breakpoint"
+//DEBUGGER
+debugger;
+endsnippet
+
+ snippet imp "Import Es modules" b
+ import ${1} from '${2}';
+ endsnippet
+
+
+"LIT ELEMENT
+snippet $$ "Lit element bind template"
+${1}
+endsnippet
+
+snippet $$$ "Lit element bind template"
+\`${1}\`
+endsnippet
+
+snippet lif "Lit element conditional"
+	${${1:this.bool} ? html \`${2}\` : html \`${3}\`}
+endsnippet
+
+snippet litloop "Lit element loop template"
+${${1:items}.map(${2:item} => html \`
+	${3}
+\`
+)}
+endsnippet
+
+ snippet dispatch "Dispatch custom event"
+ this.dispatchEvent(new CustomEvent('${1:'event-name'}', {
+ 	detail: ${2:true},
+ 	bubbles: true,
+ 	composed: true
+ }));
+ endsnippet
+
+
+
