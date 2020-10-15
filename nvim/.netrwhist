@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/Users/malvarez/Desktop/Components/bbva-web-components-app/packages/bbva-banner-video/src'
+let g:netrw_dirhist_0='/Users/malvarez/Desktop/Components/bbva-web-components-app/packages/bbva-banner-video'
+let g:netrw_dirhist_9='/Users/malvarez/Desktop/Components/bbva-web-components-app/packages'
+let g:netrw_dirhist_8='/Users/malvarez/Desktop/Components/bbva-web-components-app/packages/bbva-banner-video'
+let g:netrw_dirhist_7='/Users/malvarez/Desktop/Components/bbva-web-components-app/packages/bbva-button-icon/src'
+let g:netrw_dirhist_6='/Users/malvarez/Desktop/Components/bbva-web-components-app/packages/bbva-button-icon'
+let g:netrw_dirhist_5='/Users/malvarez/Desktop/cells-widget'
+let g:netrw_dirhist_4='/Users/malvarez/Desktop/cells-widget/src'
+let g:netrw_dirhist_3='/Users/malvarez/Desktop/cells-widget'
+let g:netrw_dirhist_2='/Users/malvarez/Desktop'
