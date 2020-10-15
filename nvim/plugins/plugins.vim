@@ -28,4 +28,5 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } 
 Plug 'junegunn/fzf.vim' 
 Plug 'ctrlpvim/ctrlp.vim' 
+Plug 'AndrewRadev/tagalong.vim'
 call plug#end() 
