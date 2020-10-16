@@ -93,6 +93,7 @@ let g:tagalong_filetypes = ['html', 'jsx', 'js', 'javascriptreact', 'typescriptr
 let mapleader=" "
 imap jj <Esc>
 imap kk <Esc>
+imap jk <Esc>
 nnoremap <C-p> :Files<CR>
 nnoremap <C-s> :w<CR>
 imap <C-s> <Esc>:w<CR>
@@ -100,7 +101,8 @@ nnoremap <C-d> <C-n>
 map <C-d> <C-n>
 imap <C-d> <C-n>
 nnoremap <leader>e :e $MYVIMRC<CR> 
-nnoremap <C-ss> source $MYVIMRC<CR> 
+"nnoremap <C-s>s source $MYVIMRC<CR> 
+
 "Moverse entre pestañas (buffers)
 nnoremap <Leader>b :buffers<CR>:buffer<Space>
 nnoremap <leader>l :bnext<CR>
@@ -124,7 +126,7 @@ noremap <silent> <leader>/ :resize -25<CR>
 nmap <leader>ee  <Plug>(ale_next_wrap)
 map <leader>ff :find 
 map <C-e> :CocCommand explorer<CR>
-"Gis status
+"Git status
 nmap <leader>gs :G<CR>
 "" ================================================================= AUTO COMPLETE ==============================================================
 " Emmet config
@@ -134,8 +136,31 @@ let g:user_emmet_leader_key=','
  "let g:user_emmet_install_global = 0
  "let g:user_emmet_mode='a'
  "autocmd FileType html,css EmmetInstall
+"================================================================= FLOAT TERM ============================================================================
+nnoremap   <silent>   <F7>    :FloatermNew<CR>
+tnoremap   <silent>   <F7>    <C-\><C-n>:FloatermNew<CR>
+nnoremap   <silent>   <F8>    :FloatermPrev<CR>
+tnoremap   <silent>   <F8>    <C-\><C-n>:FloatermPrev<CR>
+nnoremap   <silent>   <F9>    :FloatermNext<CR>
+tnoremap   <silent>   <F9>    <C-\><C-n>:FloatermNext<CR>
+nnoremap   <silent>   <F10>   :FloatermToggle<CR>
+nnoremap   <silent>  <leader>0   :FloatermToggle<CR>
+tnoremap   <silent>   <F10>   <C-\><C-n>:FloatermToggle<CR>" Floaterm
+tnoremap   <silent>  <leader>0   <C-\><C-n>:FloatermToggle<CR>" Floaterm
+let g:floaterm_keymap_kill = '<F12>'
 
- "================================================================ THEME and  interface options =================================================
+nnoremap <leader>tt :FloatermNew<CR>
+nnoremap <leader>zz :FloatermNew fzf<CR>
+nnoremap <leader>ee :FloatermNew vifm<CR>
+
+let g:floaterm_gitcommit='floaterm'
+let g:floaterm_autoinsert=1
+let g:floaterm_width=0.8
+let g:floaterm_height=0.8
+let g:floaterm_wintitle=0
+let g:floaterm_autoclose=1
+
+"================================================================ THEME and  interface options =================================================
 " Terminal
 set splitright
 set splitbelow

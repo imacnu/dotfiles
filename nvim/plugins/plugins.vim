@@ -29,4 +29,5 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim' 
 Plug 'ctrlpvim/ctrlp.vim' 
 Plug 'AndrewRadev/tagalong.vim'
+Plug 'voldikss/vim-floaterm'
 call plug#end() 
