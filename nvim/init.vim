@@ -149,7 +149,7 @@ tnoremap   <silent>   <F10>   <C-\><C-n>:FloatermToggle<CR>" Floaterm
 tnoremap   <silent>  <leader>0   <C-\><C-n>:FloatermToggle<CR>" Floaterm
 let g:floaterm_keymap_kill = '<F12>'
 
-nnoremap <leader>tt :FloatermNew<CR>
+nnoremap <leader>tt :FloatermNew --cmd="%"<CR>
 nnoremap <leader>zz :FloatermNew fzf<CR>
 nnoremap <leader>ee :FloatermNew vifm<CR>
 
