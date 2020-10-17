@@ -145,8 +145,9 @@ nnoremap   <silent>   <F9>    :FloatermNext<CR>
 tnoremap   <silent>   <F9>    <C-\><C-n>:FloatermNext<CR>
 nnoremap   <silent>   <F10>   :FloatermToggle<CR>
 nnoremap   <silent>  <leader>0   :FloatermToggle<CR>
+nnoremap   <silent>  <leader><leader>   :FloatermToggle<CR>
 tnoremap   <silent>   <F10>   <C-\><C-n>:FloatermToggle<CR>" Floaterm
-tnoremap   <silent>  <leader>0   <C-\><C-n>:FloatermToggle<CR>" Floaterm
+tnoremap   <silent>  <leader><leader>   <C-\><C-n>:FloatermToggle<CR>" Floaterm
 let g:floaterm_keymap_kill = '<F12>'
 
 nnoremap <leader>tt :FloatermNew --cmd="%"<CR>
