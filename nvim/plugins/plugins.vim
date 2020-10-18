@@ -30,4 +30,5 @@ Plug 'junegunn/fzf.vim'
 Plug 'ctrlpvim/ctrlp.vim' 
 Plug 'AndrewRadev/tagalong.vim'
 Plug 'voldikss/vim-floaterm'
+Plug 'chrisbra/Colorizer'
 call plug#end() 

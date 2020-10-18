@@ -1,27 +1,13 @@
 " Config 
 source $HOME/.config/nvim/plugins/plugins.vim
 source $HOME/.config/nvim/main/main.vim
+source $HOME/.config/nvim/colors/colors.vim
 
-let g:terminal_color_0 = "#282828"
-let g:terminal_color_1 = "#cc241d"
-let g:terminal_color_2 = "#98971a"
-let g:terminal_color_3 = "#d79921"
-let g:terminal_color_4 = "#458588"
-let g:terminal_color_5 = "#b16286"
-let g:terminal_color_6 = "#689d6a"
-let g:terminal_color_7 = "#a89984"
-let g:terminal_color_8 = "#928374"
-let g:terminal_color_9 = "#fb4934"
-let g:terminal_color_10 = "#b8bb26"
-let g:terminal_color_11 = "#fabd2f"
-let g:terminal_color_12 = "#83a598"
-let g:terminal_color_13 = "#d3869b"
-let g:terminal_color_14 = "#8ec07c"
-let g:terminal_color_15 = "#ebdbb2"
- 
 " ================ Turn Off Swap Files ============
+set autochdir
 set autoindent
 set cindent
+set clipboard=unnamedplus
 set expandtab
 set hidden
 set ignorecase
@@ -32,6 +18,7 @@ set nohlsearch
 set noswapfile
 set nowb
 set number
+set number relativenumber
 set shiftwidth=2
 set smartcase
 set smartindent
@@ -40,7 +27,11 @@ set softtabstop=0
 set spelllang=en,es
 set tabstop=2
 set title
-set clipboard=unnamedplus
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
 
 set guicursor=n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20
 highlight Comment ctermbg=DarkGray
@@ -137,8 +128,8 @@ let g:user_emmet_leader_key=','
  "let g:user_emmet_mode='a'
  "autocmd FileType html,css EmmetInstall
 "================================================================= FLOAT TERM ============================================================================
-nnoremap   <silent>   <F7>    :FloatermNew<CR>
-tnoremap   <silent>   <F7>    <C-\><C-n>:FloatermNew<CR>
+nnoremap   <silent>   <F7>    :FloatermNew --cmd="%:p:h"<<CR>
+tnoremap   <silent>   <F7>    <C-\><C-n>:FloatermNew --cmd="%:p:h"<<CR>
 nnoremap   <silent>   <F8>    :FloatermPrev<CR>
 tnoremap   <silent>   <F8>    <C-\><C-n>:FloatermPrev<CR>
 nnoremap   <silent>   <F9>    :FloatermNext<CR>
@@ -150,7 +141,7 @@ tnoremap   <silent>   <F10>   <C-\><C-n>:FloatermToggle<CR>" Floaterm
 tnoremap   <silent>  <leader><leader>   <C-\><C-n>:FloatermToggle<CR>" Floaterm
 let g:floaterm_keymap_kill = '<F12>'
 
-nnoremap <leader>tt :FloatermNew --cmd="%"<CR>
+nnoremap <leader>tt :FloatermNew --cmd="%:p:h"<CR>
 nnoremap <leader>zz :FloatermNew fzf<CR>
 nnoremap <leader>ee :FloatermNew vifm<CR>
 
