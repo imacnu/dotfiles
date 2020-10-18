@@ -39,6 +39,8 @@ highlight Constant ctermbg=Blue
 highlight Normal ctermbg=Black
 highlight Special ctermbg=DarkMagenta
 
+let loaded_netrwPlugin = 1
+
 autocmd FileType markdown setlocal spell
 autocmd FileType gitcommit setlocal spell
 autocmd FileType markdown setlocal complete+=kspell
