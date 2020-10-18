@@ -2,8 +2,7 @@
 source $HOME/.config/nvim/plugins/plugins.vim
 source $HOME/.config/nvim/main/main.vim
 source $HOME/.config/nvim/colors/colors.vim
-
-" ================ Turn Off Swap Files ============
+" ================ MAIN ============
 set autochdir
 set autoindent
 set cindent
@@ -27,6 +26,8 @@ set softtabstop=0
 set spelllang=en,es
 set tabstop=2
 set title
+
+"Hybrid relative lines
 augroup numbertoggle
   autocmd!
   autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
@@ -45,7 +46,15 @@ autocmd FileType markdown setlocal spell
 autocmd FileType gitcommit setlocal spell
 autocmd FileType markdown setlocal complete+=kspell
 autocmd FileType gitcommit setlocal complete+=kspell
-"================================================================ MAIN =============================================================================================
+
+"let g:material_terminal_italics = 1
+"let g:material_theme_style = 'default'
+"colorscheme material " moonlight | nova | synthwave84
+"set background=dark
+"source $HOME/.config/nvim/colors/colors.vim
+"autocmd InsertLeave * hi Normal guibg=#4D4D4DA
+"autocmd InsertLeave * hi Normal guibg=#212337
+"================================================================ LINTER =============================================================================================
 " Mostrar mejor mensajes de error
 let g:ale_lint_on_save = 1
 let g:ale_sign_error = '●'
@@ -169,16 +178,6 @@ function! OpenTerminal()
 endfunction
 nnoremap <leader>n :call OpenTerminal()<CR>
 
-set termguicolors
-syntax enable
-syntax on
-set noshowmode 
-colorscheme moonlight
-"colorscheme nova 
-"colorscheme synthwave84
-set background=dark
-
-let g:moonlight_terminal_italics=1
 let g:airline#extensions#tabline#enabled = 1  " Mostrar buffers abiertos (como pestañas)
 let g:airline#extensions#tabline#fnamemod = ':t'  " Mostrar sólo el nombre del archivo
 let g:airline_theme='onedark'
@@ -226,7 +225,6 @@ let g:lightline#bufferline#show_number = 1
 let g:lightline#bufferline#ordinal_separator = ' | '
 set showtabline=2  " Show tabline
 set guioptions-=e  " Don't use GUI tabline
-"let g:lightline.colorscheme = 'onedark'
 
 " ============================================================== COC autocomplete config =============================================
 nmap <silent> gd <Plug>(coc-definition)
