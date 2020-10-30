@@ -1,35 +1,40 @@
 call plug#begin('~/.config/nvim/bundle')
-Plug 'zanglg/nova.vim'
+Plug 'AndrewRadev/tagalong.vim'
 Plug 'Brettm12345/moonlight.vim'
-Plug 'artanikin/vim-synthwave84'
-Plug 'itchyny/lightline.vim'
-Plug 'maximbaz/lightline-ale'
-Plug 'dense-analysis/ale'
-Plug 'mengelbrecht/lightline-bufferline'
-Plug 'ryanoasis/vim-devicons'
-Plug 'mhinz/vim-startify'
-Plug 'mattn/emmet-vim'
-Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
-Plug 'iamcco/markdown-preview.nvim'
-Plug 'tpope/vim-surround'
-Plug 'mg979/vim-visual-multi', {'branch': 'master'} " Multi cursores  https://github.com/mg979/vim-visual-multi
-Plug 'jiangmiao/auto-pairs'
-Plug 'scrooloose/nerdcommenter'
-Plug 'tpope/vim-fugitive'
+Plug 'acro5piano/import-js-from-history'
 Plug 'airblade/vim-gitgutter' 
-Plug 'hail2u/vim-css3-syntax', { 'for': 'css' } 
-Plug 'othree/html5.vim', { 'for': 'html' } 
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' } 
-Plug 'mxw/vim-jsx' 
-Plug 'othree/javascript-libraries-syntax.vim' 
+Plug 'artanikin/vim-synthwave84'
+Plug 'chrisbra/Colorizer'
 Plug 'claco/jasmine.vim' 
-Plug 'sheerun/vim-polyglot' 
-Plug 'neoclide/coc.nvim', {'branch': 'release'} 
+Plug 'ctrlpvim/ctrlp.vim' 
+Plug 'dense-analysis/ale'
+Plug 'hail2u/vim-css3-syntax', { 'for': 'css' } 
+Plug 'iamcco/markdown-preview.nvim'
+Plug 'itchyny/lightline.vim'
+Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } 
 Plug 'junegunn/fzf.vim' 
-Plug 'ctrlpvim/ctrlp.vim' 
-Plug 'AndrewRadev/tagalong.vim'
-Plug 'voldikss/vim-floaterm'
-Plug 'chrisbra/Colorizer'
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+Plug 'mattn/emmet-vim'
+Plug 'maximbaz/lightline-ale'
+Plug 'mengelbrecht/lightline-bufferline'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'} " Multi cursores  https://github.com/mg979/vim-visual-multi
+Plug 'mhinz/vim-startify'
+Plug 'mxw/vim-jsx' 
+Plug 'neoclide/coc.nvim', {'branch': 'release'} 
+Plug 'othree/html5.vim', { 'for': 'html' } 
+Plug 'othree/javascript-libraries-syntax.vim' 
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' } 
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+Plug 'ryanoasis/vim-devicons'
+Plug 'scrooloose/nerdcommenter'
+Plug 'sheerun/vim-polyglot' 
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'voldikss/vim-floaterm'
+Plug 'zanglg/nova.vim'
+Plug 'svermeulen/vim-cutlass'
+Plug 'svermeulen/vim-subversive'
+Plug 'fcpg/vim-showmap'
+Plug 'mhartington/oceanic-next'
 call plug#end() 

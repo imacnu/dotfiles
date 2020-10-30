@@ -1,6 +1,8 @@
 let g:material_terminal_italics = 1
 let g:material_theme_style = 'palenight'
-colorscheme material " moonlight | nova | synthwave84
+let g:oceanic_next_terminal_bold = 1
+let g:oceanic_next_terminal_italic = 1
+colorscheme OceanicNext " moonlight | nova | synthwave84
 set background=dark
 "source $HOME/.config/nvim/colors/colors.vim
 "autocmd InsertLeave * hi Normal guibg=#4D4D4DA

@@ -19,6 +19,7 @@ set nowb
 set number
 set number relativenumber
 set shiftwidth=2
+set showmatch
 set smartcase
 set smartindent
 set smarttab
@@ -93,8 +94,11 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 let g:tagalong_filetypes = ['html', 'jsx', 'js', 'javascriptreact', 'typescriptreact']
 " ====================================================================KEYBINDINGs===================================================================================
 let mapleader=" "
+imap hh <Esc>
 imap jj <Esc>
 imap kk <Esc>
+imap kk <Esc>
+imap ll <Esc>
 imap jk <Esc>
 nnoremap <C-p> :Files<CR>
 nnoremap <C-s> :w<CR>
@@ -103,8 +107,11 @@ nnoremap <C-d> <C-n>
 map <C-d> <C-n>
 imap <C-d> <C-n>
 nnoremap <leader>e :e $MYVIMRC<CR> 
-"nnoremap <C-s>s source $MYVIMRC<CR> 
-
+"No almancenar eliminados en buffer
+nnoremap m d
+xnoremap m d
+nnoremap mm dd
+nnoremap M D
 "Moverse entre pestañas (buffers)
 nnoremap <Leader>b :buffers<CR>:buffer<Space>
 nnoremap <leader>l :bnext<CR>
@@ -130,6 +137,12 @@ map <leader>ff :find
 map <C-e> :CocCommand explorer<CR>
 "Git status
 nmap <leader>gs :G<CR>
+" Available imports
+nnoremap <Leader>ij :ImportJsFZF<CR>
+
+"Subversive
+nmap <leader>ss <plug>(SubversiveSubstituteWordRange)
+"nmap <leader>sa<plug>(SubversiveSubvertWordRange)
 "" ================================================================= AUTO COMPLETE ==============================================================
 " Emmet config
 let g:user_emmet_leader_key=','
