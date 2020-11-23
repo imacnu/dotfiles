@@ -17,10 +17,21 @@ snippet deb "Debugger breakpoint"
 debugger;
 endsnippet
 
- snippet imp "Import Es modules" b
- import ${1} from '${2}';
- endsnippet
+snippet imp "Import Es modules" b
+import ${1} from '${2}';
+endsnippet
 
+snippet impn "Import named Es modules" b
+import {${1}} from '${2}';
+endsnippet
+
+snippet exp "Export Es modules" b
+export ${1} from '${2}';
+endsnippet
+
+snippet expn "Export named Es modules" b
+export {${1}} from '${2}';
+endsnippet
 
 "LIT ELEMENT
 snippet $$ "Lit element bind template"
@@ -42,13 +53,20 @@ ${${1:items}.map(${2:item} => html \`
 )}
 endsnippet
 
- snippet dispatch "Dispatch custom event"
+snippet lithtml "Lit string template"
+html \`
+	${1}
+\`
+
+endsnippet
+
+snippet dispatch "Dispatch custom event"
  this.dispatchEvent(new CustomEvent('${1:'event-name'}', {
  	detail: ${2:true},
  	bubbles: true,
  	composed: true
  }));
- endsnippet
+endsnippet
 
 
 

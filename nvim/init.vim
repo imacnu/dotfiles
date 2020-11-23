@@ -98,7 +98,6 @@ imap hh <Esc>
 imap jj <Esc>
 imap kk <Esc>
 imap kk <Esc>
-imap ll <Esc>
 imap jk <Esc>
 nnoremap <C-p> :Files<CR>
 nnoremap <C-s> :w<CR>
@@ -335,3 +334,27 @@ let g:startify_custom_header = [
   \ '   ┗┛    ╹   ╹ ╹',
   \ '   ',
   \ ]
+
+
+"======================================================================= FIRENVIM ==================================================================================
+
+let g:firenvim_config = { 
+    \ 'globalSettings': {
+        \ 'alt': 'all',
+    \  },
+    \ 'localSettings': {
+        \ '.*': {
+            \ 'cmdline': 'neovim',
+            \ 'priority': 0,
+            \ 'selector': 'textarea',
+            \ 'takeover': 'always',
+        \ },
+    \ }
+\ }
+
+au BufEnter github.com_*.txt set filetype=markdown
+au BufEnter globaldevtools.bbva.com_*.txt set filetype=markdown
+au BufEnter globaldevtools.bbva.com/bitbucket/_*.md set filetype=markdown
+let fc = g:firenvim_config['localSettings']
+"let fc['https?://[^/]+\.co\.uk/'] = { 'takeover': 'never', 'priority': 1 }
+"let fc['.*'] = { 'selector': 'textarea:not([readonly]), div[role="textbox"]' }
