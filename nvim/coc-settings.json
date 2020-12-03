@@ -5,15 +5,18 @@
     "html",
     "markdown",
     "javascript",
+    "javascriptreact",
+    "jsx",
     "json"
   ],
   "prettier.singleQuote": true,
+  "prettier.jsxSingleQuote": true,
   "codeLens.enable": true,
   "snippets.extends": {
     "javascriptreact": ["javascript"],
     "typescipt": ["javascript"]
   },
-  "explorer.width": 30,
+  "explorer.width": 35,
   "explorer.icon.enableNerdfont": true,
   "explorer.previewAction.onHover": false,
   "explorer.keyMappings": {

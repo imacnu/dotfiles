@@ -24,10 +24,12 @@ set smartcase
 set smartindent
 set smarttab
 set softtabstop=0
-set spelllang=en,es
+"set spelllang=en,es
 set tabstop=2
 set title
-
+if (has("termguicolors"))
+ set termguicolors
+endif
 "Hybrid relative lines
 augroup numbertoggle
   autocmd!
@@ -37,9 +39,9 @@ augroup END
 
 set guicursor=n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20
 highlight Comment ctermbg=DarkGray
-highlight Constant ctermbg=Blue
-highlight Normal ctermbg=Black
-highlight Special ctermbg=DarkMagenta
+"highlight Constant ctermbg=Blue
+"highlight Normal ctermbg=Black
+"highlight Special ctermbg=DarkMagenta
 
 let loaded_netrwPlugin = 1
 
@@ -47,17 +49,10 @@ autocmd FileType markdown setlocal spell
 autocmd FileType gitcommit setlocal spell
 autocmd FileType markdown setlocal complete+=kspell
 autocmd FileType gitcommit setlocal complete+=kspell
-
-"let g:material_terminal_italics = 1
-"let g:material_theme_style = 'default'
-"colorscheme material " moonlight | nova | synthwave84
-"set background=dark
-"source $HOME/.config/nvim/colors/colors.vim
-"autocmd InsertLeave * hi Normal guibg=#4D4D4DA
-"autocmd InsertLeave * hi Normal guibg=#212337
 "================================================================ LINTER =============================================================================================
 " Mostrar mejor mensajes de error
 let g:ale_lint_on_save = 1
+let g:ale_linters_explicit = 1
 let g:ale_sign_error = '●'
 let g:ale_sign_warning = '.'
 function! LinterStatus() abort
@@ -72,7 +67,12 @@ function! LinterStatus() abort
 endfunction
 set statusline+=%=
 set statusline+=\ %{LinterStatus()}
-
+let g:ale_fixers = {
+\   'javascript': ['prettier'],
+\   'css': ['prettier'],
+\}
+"let g:ale_fix_on_save = 1
+"================================================================ FZF =============================================================================================
 " Ejecutar comandos con alt-enter :Commands
 let g:fzf_commands_expect = 'alt-enter'
 " Guardar historial de búsquedas
@@ -84,7 +84,7 @@ set updatetime=250
 " AutoPairskk 
 let g:AutoPairs={'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`','<':'>'}
 " CtrlP
-let g:ctrlp_working_path_mode = 2
+let g:ctrlp_working_path_mode = 'c' 
 " Ignorar archivos en .gitignore
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](\.(git|hg|svn)|node_modules)$',
@@ -203,7 +203,7 @@ if (has("termguicolors"))
 endif
 autocmd BufWritePost,TextChanged,TextChangedI * call lightline#update()
 let g:lightline = {
-      \ 'colorscheme': 'material',
+      \ 'colorscheme': 'oceanicnext',
       \   'active': {
       \     'left':[ [ 'mode', 'paste'],
       \              [ 'gitbranch', 'readonly', 'filename', 'modified' ],
@@ -243,6 +243,7 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 "  Navigate autocomplete options
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
@@ -260,33 +261,8 @@ endfunction
 
 let g:coc_snippet_next = '<tab>'
 " Formatting selected code.
+vmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
-"COC EXPLORER
-"nmap <space>f :CocCommand explorer --preset floating<CR>
-"autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
-"====================================================== NERDTree config =======================================
-"autocmd VimEnter * unlet g:NERDTreeUpdateOnCursorHold
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-"let g:NERDTreeChDirMode=2
-"let g:NERDTreeShowBookmarks=1
-"let g:NERDTreeGitStatusUseNerdFonts=1
-"let g:nerdtree_tabs_focus_on_files=1
-"let NERDTreeAutoDeleteBuffer = 1
-"let NERDTreeMinimalUI = 1
-"let NERDTreeDirArrows = 1
-"let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
-"let g:indentLine_fileTypeExclude = ['text', 'sh', 'help', 'terminal']
-"let g:indentLine_bufNameExclude = ['NERD_tree.*', 'term:.*']
-"map <C-b> :NERDTreeToggle %<CR>
-"nnoremap <silent> <Leader>f :NERDTreeFind<CR>
-"nmap <silent> <C-g> :call NERDTreeToggleInCurDir()<cr>
-"function! NERDTreeToggleInCurDir()
-  "if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1)
-    "exe ":NERDTreeClose"
-  "else
-    "exe ":NERDTreeFind"
-  "endif
-"endfunction
 "======================================================================= STARTTIFY ==================================================================================
 
 function! s:gitModified()
@@ -335,26 +311,3 @@ let g:startify_custom_header = [
   \ '   ',
   \ ]
 
-
-"======================================================================= FIRENVIM ==================================================================================
-
-let g:firenvim_config = { 
-    \ 'globalSettings': {
-        \ 'alt': 'all',
-    \  },
-    \ 'localSettings': {
-        \ '.*': {
-            \ 'cmdline': 'neovim',
-            \ 'priority': 0,
-            \ 'selector': 'textarea',
-            \ 'takeover': 'always',
-        \ },
-    \ }
-\ }
-
-au BufEnter github.com_*.txt set filetype=markdown
-au BufEnter globaldevtools.bbva.com_*.txt set filetype=markdown
-au BufEnter globaldevtools.bbva.com/bitbucket/_*.md set filetype=markdown
-let fc = g:firenvim_config['localSettings']
-"let fc['https?://[^/]+\.co\.uk/'] = { 'takeover': 'never', 'priority': 1 }
-"let fc['.*'] = { 'selector': 'textarea:not([readonly]), div[role="textbox"]' }
