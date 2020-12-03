@@ -41,9 +41,9 @@ alias zshconfig="nvim ~/.zshrc"
 alias vimconfigc="code ~/.vimrc"
 alias vimconfig="nvim ~/.config/nvim/init.vim "
 alias vimsnippets="nvim /Users/malvarez/.config/coc/ultisnips"
-alias vimsnippets="code /Users/malvarez/.config/coc/ultisnips"
+alias vimsnippetsc="code /Users/malvarez/.config/coc/ultisnips"
 alias hyperconfig="nvim ~/.hyper.js"
-alias alacrityconfig="nvim ~/.config/alacritty/alacritty.yml"
+alias alacrityconfig="nvim ~/.alacritty.yml"
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias dockSpace=' defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile"}'; killall Dock'
@@ -82,6 +82,16 @@ alias llint="cells component:lint"
 alias git-pr='f(){ git fetch origin refs/pull-requests/"$1"/from:"$2"; git checkout "$2";  unset -f f; }; f'
 #Docker
 alias rdocker="docker rm -fv \`docker ps -aq\`"
+#Vim
+alias v="nvim"
+alias v.="nvim ."
+vv() {
+  if ["${1}" === '']; then 
+    nvim
+    exit 1;
+  fi
+   nvim ${1}
+}
 
 #FUNCTIONS
 #Install lit element bbva ui
@@ -93,7 +103,7 @@ tr() {
    tree -L ${1-1}
 }
 
-fork() {
+fetch() {
    git fetch origin refs/pull-requests/${1}/from:${2}
 }
 
