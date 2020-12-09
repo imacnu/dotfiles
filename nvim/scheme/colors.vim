@@ -28,7 +28,7 @@ function SetCocExplorerColors() abort
 endfunction
 function SetStartifyColors() abort
   hi StartifyNumber  guifg=#f9ca24
-  hi StartifyPath    guifg=#5DADE2
+  hi StartifyPath    guifg=#88C0D0
   hi StartifyNumber  guifg=#f9ca24
   hi StartifySlash   guifg=#16a085
   hi StartifyBracket guifg=#16a085
@@ -37,11 +37,11 @@ endfunction
 autocmd ColorScheme * call SetItalics()
 autocmd ColorScheme * call SetCocExplorerColors()
 autocmd ColorScheme * call SetStartifyColors()
-
-colorscheme oceanicnext " moonlight | nova | synthwave84
-let g:oceanic_italic_comments = 1
-let g:oceanic_bold = 1
-let g:lightline = { 'colorscheme': 'oceanicnext' }
+colorscheme nord " moonlight | nova | synthwave84
+let g:nord_bold = 1
+"let g:oceanic_italic_comments = 1
+"let g:oceanic_bold = 1
+"let g:lightline = { 'colorscheme': 'oceanicnext' }
 "let g:oceanic_next_terminal_bold = 1
 "let g:oceanic_next_terminal_italic = 1
 "let g:oceanic_for_polyglot = 1

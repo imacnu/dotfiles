@@ -33,4 +33,5 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'voldikss/vim-floaterm'
 Plug 'wincent/ferret'
+Plug 'arthurxavierx/vim-caser'
 call plug#end()

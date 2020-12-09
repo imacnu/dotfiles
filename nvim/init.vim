@@ -1,7 +1,7 @@
 " Config 
 source $HOME/.config/nvim/plugins/plugins.vim
 source $HOME/.config/nvim/main/main.vim
-source $HOME/.config/nvim/colors/colors.vim
+source $HOME/.config/nvim/scheme/colors.vim
 " ================ MAIN ============
 set autochdir
 set autoindent
