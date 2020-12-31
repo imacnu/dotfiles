@@ -37,7 +37,7 @@ endfunction
 autocmd ColorScheme * call SetItalics()
 autocmd ColorScheme * call SetCocExplorerColors()
 autocmd ColorScheme * call SetStartifyColors()
-colorscheme nord " moonlight | nova | synthwave84
+colorscheme night-owl "moonlight | nova | synthwave84
 let g:nord_bold = 1
 "let g:oceanic_italic_comments = 1
 "let g:oceanic_bold = 1

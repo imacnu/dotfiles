@@ -5,8 +5,8 @@
     "html",
     "markdown",
     "javascript",
-    "javascriptreact",
     "jsx",
+    "vue",
     "json"
   ],
   "prettier.singleQuote": true,

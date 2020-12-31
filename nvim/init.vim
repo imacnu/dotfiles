@@ -44,7 +44,6 @@ highlight Comment ctermbg=DarkGray
 "highlight Special ctermbg=DarkMagenta
 
 let loaded_netrwPlugin = 1
-
 autocmd FileType markdown setlocal spell
 autocmd FileType gitcommit setlocal spell
 autocmd FileType markdown setlocal complete+=kspell
@@ -119,10 +118,10 @@ nnoremap <leader>q :bdelete<CR>
 nnoremap <leader>t :tab split<CR>
 
 "Moverse entre ventanas/paneles 
-nnoremap <C-J> <C-W>j
-nnoremap <C-K> <C-W>k
-nnoremap <C-L> <C-W>l
-nnoremap <C-H> <C-W>h
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-l> <C-W>l
+nnoremap <C-h> <C-W>h
 nnoremap <leader>ss :SSave<CR>
 nnoremap <leader>sc :SClose<CR>
 noremap <silent> <leader>. :vertical resize +25<CR>
@@ -203,7 +202,7 @@ if (has("termguicolors"))
 endif
 autocmd BufWritePost,TextChanged,TextChangedI * call lightline#update()
 let g:lightline = {
-      \ 'colorscheme': 'oceanicnext',
+      \ 'colorscheme': 'nightowl',
       \   'active': {
       \     'left':[ [ 'mode', 'paste'],
       \              [ 'gitbranch', 'readonly', 'filename', 'modified' ],
