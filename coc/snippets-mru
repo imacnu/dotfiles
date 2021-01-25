@@ -1,5 +1,6 @@
-expn
+log
 imp
+expn
 impn
 litdemo
 snippet
@@ -7,7 +8,6 @@ lithtml
 afn
 dispatch
 litloop
-log
 lif
 liif
 $

@@ -57,6 +57,7 @@ alias gtags="git log --tags --oneline --decorate --simplify-by-decoration"
 alias dtags="git push origin master :refs/tags/"
 alias graph="git log --tags --pretty --decorate --graph --all"
 alias geturl="git remote get-url origin"
+alias gdbranches="git branch | grep -v "master" | xargs git branch -D"
 #Apps
 alias xcode='open -a /Applications/Xcode.app'
 alias runMongo='mongod --config /usr/local/etc/mongod.conf'
@@ -122,6 +123,7 @@ reborn () {
 }
 export EDITOR="nvim"
 export BASH="/usr/local/bin"
+export PATH=/opt/homebrew/bin:$PATH
 export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion

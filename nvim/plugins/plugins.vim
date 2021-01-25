@@ -18,6 +18,7 @@ Plug 'mattn/emmet-vim'
 Plug 'maximbaz/lightline-ale'
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'mhinz/vim-grepper'
 Plug 'mhinz/vim-startify'
 Plug 'mxw/vim-jsx'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}

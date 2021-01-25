@@ -83,7 +83,7 @@ set updatetime=250
 " AutoPairskk 
 let g:AutoPairs={'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`','<':'>'}
 " CtrlP
-let g:ctrlp_working_path_mode = 'c' 
+let g:ctrlp_working_path_mode = 'ra' 
 " Ignorar archivos en .gitignore
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](\.(git|hg|svn)|node_modules)$',
@@ -91,7 +91,8 @@ let g:ctrlp_custom_ignore = {
   \ }
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 let g:tagalong_filetypes = ['html', 'jsx', 'js', 'javascriptreact', 'typescriptreact']
-" ====================================================================KEYBINDINGs===================================================================================
+
+
 let mapleader=" "
 imap hh <Esc>
 imap jj <Esc>
@@ -128,16 +129,16 @@ noremap <silent> <leader>. :vertical resize +25<CR>
 noremap <silent> <leader>, :vertical resize -25<CR>
 noremap <silent> <leader>' :resize +25<CR>
 noremap <silent> <leader>/ :resize -25<CR>
-
 "Linter -  go to next error
-nmap <leader>ee  <Plug>(ale_next_wrap)
 map <leader>ff :find 
 map <C-e> :CocCommand explorer<CR>
 "Git status
 nmap <leader>gs :G<CR>
 " Available imports
 nnoremap <Leader>ij :ImportJsFZF<CR>
-
+"Greeper
+nnoremap <leader>g :Grepper<cr>
+let g:grepper = { 'next_tool': '<leader>g' }
 "Subversive
 nmap <leader>ss <plug>(SubversiveSubstituteWordRange)
 "nmap <leader>sa<plug>(SubversiveSubvertWordRange)
