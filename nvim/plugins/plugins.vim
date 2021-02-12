@@ -1,5 +1,6 @@
 call plug#begin('~/.config/nvim/bundle')
 Plug 'AndrewRadev/tagalong.vim'
+Plug 'MaxMEllon/vim-jsx-pretty' 
 Plug 'acro5piano/import-js-from-history'
 Plug 'airblade/vim-gitgutter'
 Plug 'arthurxavierx/vim-caser'
@@ -7,6 +8,7 @@ Plug 'chrisbra/Colorizer'
 Plug 'claco/jasmine.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dense-analysis/ale'
+Plug 'dyng/ctrlsf.vim'
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 Plug 'haishanh/night-owl.vim'
 Plug 'iamcco/markdown-preview.nvim'
@@ -20,7 +22,6 @@ Plug 'mengelbrecht/lightline-bufferline'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'mhinz/vim-grepper'
 Plug 'mhinz/vim-startify'
-Plug 'mxw/vim-jsx'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'othree/html5.vim', { 'for': 'html' }
 Plug 'othree/javascript-libraries-syntax.vim'
@@ -36,4 +37,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'voldikss/vim-floaterm'
 Plug 'wincent/ferret'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 call plug#end()

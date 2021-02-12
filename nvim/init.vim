@@ -50,29 +50,37 @@ autocmd FileType markdown setlocal complete+=kspell
 autocmd FileType gitcommit setlocal complete+=kspell
 "================================================================ LINTER =============================================================================================
 " Mostrar mejor mensajes de error
-let g:ale_lint_on_save = 1
-let g:ale_linters_explicit = 1
-let g:ale_sign_error = '●'
-let g:ale_sign_warning = '.'
-function! LinterStatus() abort
-    let l:counts = ale#statusline#Count(bufnr(''))
-    let l:all_errors = l:counts.error + l:counts.style_error
-    let l:all_non_errors = l:counts.total - l:all_errors
-    return l:counts.total == 0 ? 'OK' : printf(
-        \   '%d⨉ %d⚠ ',
-        \   all_non_errors,
-        \   all_errors
-        \)
-endfunction
-set statusline+=%=
-set statusline+=\ %{LinterStatus()}
-let g:ale_fixers = {
-\   'javascript': ['prettier'],
-\   'css': ['prettier'],
-\}
-"let g:ale_fix_on_save = 1
+"let g:ale_linters = {
+"\   'javascript': ['eslint'],
+"\}
+"let g:ale_fixers = {
+"\   'javascript': ['prettier', 'eslint'],
+"\		'*': ['trim_whitespace'],
+"\   'css': ['prettier'],
+"\}
+"let g:ale_lint_on_save = 1
+"let g:ale_linters_explicit = 1
+"let g:ale_sign_error = '●'
+"let g:ale_sign_warning = '.'
+"function! LinterStatus() abort
+    "let l:counts = ale#statusline#Count(bufnr(''))
+    "let l:all_errors = l:counts.error + l:counts.style_error
+    "let l:all_non_errors = l:counts.total - l:all_errors
+    "return l:counts.total == 0 ? 'OK' : printf(
+        "\   '%d⨉ %d⚠ ',
+        "\   all_non_errors,
+        "\   all_errors
+        "\)
+"endfunction
+"set statusline+=%=
+"set statusline+=\ %{LinterStatus()}
 "================================================================ FZF =============================================================================================
-" Ejecutar comandos con alt-enter :Commands
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+"" Ejecutar comandos con alt-enter :Commands
 let g:fzf_commands_expect = 'alt-enter'
 " Guardar historial de búsquedas
 let g:fzf_history_dir = '~/.local/share/fzf-history'
@@ -91,7 +99,6 @@ let g:ctrlp_custom_ignore = {
   \ }
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 let g:tagalong_filetypes = ['html', 'jsx', 'js', 'javascriptreact', 'typescriptreact']
-
 
 let mapleader=" "
 imap hh <Esc>
@@ -116,7 +123,7 @@ nnoremap <Leader>b :buffers<CR>:buffer<Space>
 nnoremap <leader>l :bnext<CR>
 nnoremap <leader>h :bprevious<CR> 
 nnoremap <leader>q :bdelete<CR>
-nnoremap <leader>t :tab split<CR>
+"nnoremap <leader>t :tab split<CR>
 
 "Moverse entre ventanas/paneles 
 nnoremap <C-j> <C-W>j
@@ -130,7 +137,7 @@ noremap <silent> <leader>, :vertical resize -25<CR>
 noremap <silent> <leader>' :resize +25<CR>
 noremap <silent> <leader>/ :resize -25<CR>
 "Linter -  go to next error
-map <leader>ff :find 
+"map <leader>ff :find 
 map <C-e> :CocCommand explorer<CR>
 "Git status
 nmap <leader>gs :G<CR>
@@ -142,6 +149,9 @@ let g:grepper = { 'next_tool': '<leader>g' }
 "Subversive
 nmap <leader>ss <plug>(SubversiveSubstituteWordRange)
 "nmap <leader>sa<plug>(SubversiveSubvertWordRange)
+"CtrlSF Searcher
+nmap     <leader>c <Plug>CtrlSFPrompt
+nnoremap <C-F>o :CtrlSFOpen<CR>
 "" ================================================================= AUTO COMPLETE ==============================================================
 " Emmet config
 let g:user_emmet_leader_key=','
@@ -314,4 +324,3 @@ let g:startify_custom_header = [
   \ '   ┗┛    ╹   ╹ ╹',
   \ '   ',
   \ ]
-

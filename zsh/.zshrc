@@ -88,7 +88,7 @@ alias rdocker="docker rm -fv \`docker ps -aq\`"
 alias v="nvim"
 alias v.="nvim ."
 vv() {
-  if ["${1}" === '']; then 
+  if ["${1}" === '']; then
     nvim
     exit 1;
   fi
