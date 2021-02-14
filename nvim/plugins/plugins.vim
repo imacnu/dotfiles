@@ -1,8 +1,9 @@
-call plug#begin('~/.config/nvim/bundle')
-Plug 'AndrewRadev/tagalong.vim'
+call plug#begin('~/.vim/plugged')
 Plug 'MaxMEllon/vim-jsx-pretty' 
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'acro5piano/import-js-from-history'
 Plug 'airblade/vim-gitgutter'
+Plug 'PsychoLlama/further.vim'
 Plug 'arthurxavierx/vim-caser'
 Plug 'chrisbra/Colorizer'
 Plug 'claco/jasmine.vim'
@@ -19,8 +20,8 @@ Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 Plug 'mattn/emmet-vim'
 Plug 'maximbaz/lightline-ale'
 Plug 'mengelbrecht/lightline-bufferline'
+Plug 'metakirby5/codi.vim'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-Plug 'mhinz/vim-grepper'
 Plug 'mhinz/vim-startify'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'othree/html5.vim', { 'for': 'html' }

@@ -48,38 +48,12 @@ autocmd FileType markdown setlocal spell
 autocmd FileType gitcommit setlocal spell
 autocmd FileType markdown setlocal complete+=kspell
 autocmd FileType gitcommit setlocal complete+=kspell
-"================================================================ LINTER =============================================================================================
-" Mostrar mejor mensajes de error
-"let g:ale_linters = {
-"\   'javascript': ['eslint'],
-"\}
-"let g:ale_fixers = {
-"\   'javascript': ['prettier', 'eslint'],
-"\		'*': ['trim_whitespace'],
-"\   'css': ['prettier'],
-"\}
-"let g:ale_lint_on_save = 1
-"let g:ale_linters_explicit = 1
-"let g:ale_sign_error = '●'
-"let g:ale_sign_warning = '.'
-"function! LinterStatus() abort
-    "let l:counts = ale#statusline#Count(bufnr(''))
-    "let l:all_errors = l:counts.error + l:counts.style_error
-    "let l:all_non_errors = l:counts.total - l:all_errors
-    "return l:counts.total == 0 ? 'OK' : printf(
-        "\   '%d⨉ %d⚠ ',
-        "\   all_non_errors,
-        "\   all_errors
-        "\)
-"endfunction
-"set statusline+=%=
-"set statusline+=\ %{LinterStatus()}
 "================================================================ FZF =============================================================================================
 " Find files using Telescope command-line sugar.
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>tt <cmd>Telescope find_files<cr>
+nnoremap <leader>tg <cmd>Telescope live_grep<cr>
+nnoremap <leader>tb <cmd>Telescope buffers<cr>
+nnoremap <leader>th <cmd>Telescope help_tags<cr>
 "" Ejecutar comandos con alt-enter :Commands
 let g:fzf_commands_expect = 'alt-enter'
 " Guardar historial de búsquedas
@@ -143,10 +117,7 @@ map <C-e> :CocCommand explorer<CR>
 nmap <leader>gs :G<CR>
 " Available imports
 nnoremap <Leader>ij :ImportJsFZF<CR>
-"Greeper
-nnoremap <leader>g :Grepper<cr>
-let g:grepper = { 'next_tool': '<leader>g' }
-"Subversive
+"Subversive 
 nmap <leader>ss <plug>(SubversiveSubstituteWordRange)
 "nmap <leader>sa<plug>(SubversiveSubvertWordRange)
 "CtrlSF Searcher
@@ -174,7 +145,7 @@ tnoremap   <silent>   <F10>   <C-\><C-n>:FloatermToggle<CR>" Floaterm
 tnoremap   <silent>  <leader><leader>   <C-\><C-n>:FloatermToggle<CR>" Floaterm
 let g:floaterm_keymap_kill = '<F12>'
 
-nnoremap <leader>tt :FloatermNew --cmd="%:p:h"<CR>
+"nnoremap <leader>tt :FloatermNew --cmd="%:p:h"<CR>
 nnoremap <leader>zz :FloatermNew fzf<CR>
 nnoremap <leader>ee :FloatermNew vifm<CR>
 
@@ -308,7 +279,9 @@ let g:startify_lists = [
           \ ]
 
 let g:startify_bookmarks = [
-            \ { 'c': '/Users/malvarez/Desktop/Components/bbva-web-components-app' },
+            \ { 'a': '/Users/malvarez/Desktop/Components/bbva-web-components-app' },
+            \ { 'f': '/Users/malvarez/Desktop/Components/bbva-web-components-fork' },
+            \ { 'g': '/Users/malvarez/Desktop/Components/Glomo/glomo-pe' },
             \ { 'i': '~/.config/nvim/init.vim' },
             \ { 'o': '~/.config/coc/ultisnips/javascript.snippets' },
             \ { 's': '~/.config/coc/ultisnips/snippets.snippets' },

@@ -43,6 +43,7 @@ alias vimconfig="nvim ~/.config/nvim/init.vim"
 alias nordconfig="nvim ~/.config/nvim/colors/nord.vim"
 alias vimsnippets="nvim /Users/malvarez/.config/coc/ultisnips"
 alias vimsnippetsc="code /Users/malvarez/.config/coc/ultisnips"
+alias vp="v /Users/malvarez/Desktop/Components/bbva-web-components-app/packages"
 alias hyperconfig="nvim ~/.hyper.js"
 alias alacrityconfig="nvim ~/.alacritty.yml"
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'

@@ -46,8 +46,7 @@ let g:nord_bold = 1
 "let g:oceanic_next_terminal_italic = 1
 "let g:oceanic_for_polyglot = 1
 set background=dark
-
-
+hi CursorLineNr guifg=#f1c40f
 "source $HOME/.config/nvim/colors/colors.vim
 "autocmd InsertLeave * hi Normal guibg=#4D4D4DA
 "autocmd InsertLeave * hi Normal guibg=#212337
@@ -61,7 +60,7 @@ let g:terminal_color_6 = "#16a085"
 let g:terminal_color_7 = "#34495e"
 let g:terminal_color_8 = "#928374"
 let g:terminal_color_9 = "#16a085"
-let g:terminal_color_10 = "#b8bb26"
+let g:terminal_color_10 = ""
 let g:terminal_color_11 = "#f1c40f"
 let g:terminal_color_12 = "#83a598"
 let g:terminal_color_13 = "#d3869b"
