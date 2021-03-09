@@ -93,4 +93,5 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll)$',
   \ }
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+"let g:indentLine_color_gui = '#A4E57E'

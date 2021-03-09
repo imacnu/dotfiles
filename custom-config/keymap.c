@@ -62,11 +62,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_LOWER] = LAYOUT( \
   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                    KC_MS_U,   KC_F8,   KC_F9, KC_MINS, KC_EQL, KC_DEL, \
-  KC_GRV,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                   KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, KC_BTN1, KC_BTN2, \
+  KC_GRV,   KC_F2,   KC_F3,   KC_F4,   KC_F5,  KC_F6,                   KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, KC_BTN1, KC_BTN2, \
   KC_LSFT, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,                  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, LSFT(KC_SCLN), LSFT(KC_QUOT),\
   KC_LCTRL, _______, _______, _______, _______, _______,LSFT(KC_9) , LSFT(KC_0), KC_MS_L, KC_MS_D, LSFT(KC_COMM), LSFT(KC_DOT),LSFT(KC_SLSH), KC_BSLS, \
                              _______, _______, _______, _______, _______,  _______, _______, _______\
 ),
+
 /* RAISE
  * ,-----------------------------------------.                    ,-----------------------------------------.
  * |      |      |      |      |      |      |                    |      |      |      |      |      |      |

@@ -5,6 +5,9 @@
     "html",
     "markdown",
     "javascript",
+    "typescript",
+    "typescriptreact",
+    "tsx",
     "jsx",
     "vue",
     "json"
@@ -14,7 +17,10 @@
   "codeLens.enable": true,
   "snippets.extends": {
     "javascriptreact": ["javascript"],
-    "typescipt": ["javascript"]
+    "html": ["javascript"],
+    "typescript": ["javascript"],
+    "typescriptreact": ["javascript"],
+    "tsx": ["javascript"]
   },
   "explorer.width": 35,
   "explorer.icon.enableNerdfont": true,

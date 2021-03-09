@@ -48,7 +48,7 @@ alias hyperconfig="nvim ~/.hyper.js"
 alias alacrityconfig="nvim ~/.alacritty.yml"
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
-alias dockSpace=' defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile"}'; killall Dock'
+alias dockSpace='defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile"}'; killall Dock'
 alias reload="source ~/.zshrc"
 alias disableGate='sudo spctl --master-disable'
 alias enableGate='sudo spctl --master-enable'
@@ -65,7 +65,7 @@ alias runMongo='mongod --config /usr/local/etc/mongod.conf'
 alias pserve='python -m SimpleHTTPServer 8000'
 alias weather='curl http://wttr.in/'
 alias lsf='ls | fzf'
-alias nsf='nvim $(fzf)'
+alias nsf='nvim $(fzf --preview "bat {-1} --color=always")'
 alias vsf='code $(fzf)'
 #CELLS
 #polymer
@@ -82,21 +82,24 @@ alias lserve="cells lit-component:serve"
 alias ltestw="cells lit-component:test:watch"
 alias ltest='cells lit-component:test'
 alias llint="cells component:lint"
-alias git-pr='f(){ git fetch origin refs/pull-requests/"$1"/from:"$2"; git checkout "$2";  unset -f f; }; f'
+alias gpr='f(){ git fetch origin refs/pull-requests/"$1"/from:"$2"; git checkout "$2";  unset -f f; }; f'
 #Docker
 alias rdocker="docker rm -fv \`docker ps -aq\`"
 #Vim
 alias v="nvim"
-alias v.="nvim ."
 vv() {
   if ["${1}" === '']; then
     nvim
     exit 1;
   fi
-   nvim ${1}
+   nvim ${1}""
+}
+#FUNCTIONS
+gdd() {
+  preview="git diff $@ --color=always -- {-1}"
+  git diff $@ --name-only | fzf -m --ansi --preview $preview
 }
 
-#FUNCTIONS
 #Install lit element bbva ui
 iui() {
    npm install --save  @bbva-web-components/${1}

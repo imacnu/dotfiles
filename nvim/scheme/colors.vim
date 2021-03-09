@@ -1,5 +1,3 @@
-"let g:material_terminal_italics = 1
-"let g:material_theme_style = 'palenight'
 
 if (has("termguicolors"))
  set termguicolors
@@ -37,14 +35,14 @@ endfunction
 autocmd ColorScheme * call SetItalics()
 autocmd ColorScheme * call SetCocExplorerColors()
 autocmd ColorScheme * call SetStartifyColors()
-colorscheme night-owl "moonlight | nova | synthwave84
-let g:nord_bold = 1
-"let g:oceanic_italic_comments = 1
-"let g:oceanic_bold = 1
-"let g:lightline = { 'colorscheme': 'oceanicnext' }
-"let g:oceanic_next_terminal_bold = 1
-"let g:oceanic_next_terminal_italic = 1
-"let g:oceanic_for_polyglot = 1
+colorscheme OceanicNext "moonlight | nova | synthwave84
+"let g:nord_bold = 1
+let g:oceanic_italic_comments = 1
+let g:oceanic_next_terminal_bold = 1
+let g:oceanic_next_terminal_italic = 1
+let g:oceanic_bold = 1
+let g:lightline = { 'colorscheme': 'oceanicnext' }
+let g:oceanic_for_polyglot = 1
 set background=dark
 hi CursorLineNr guifg=#f1c40f
 "source $HOME/.config/nvim/colors/colors.vim

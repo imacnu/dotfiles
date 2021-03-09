@@ -42,7 +42,7 @@ highlight Comment ctermbg=DarkGray
 "highlight Constant ctermbg=Blue
 "highlight Normal ctermbg=Black
 "highlight Special ctermbg=DarkMagenta
-
+let buffet_use_devicons = 1
 let loaded_netrwPlugin = 1
 autocmd FileType markdown setlocal spell
 autocmd FileType gitcommit setlocal spell
@@ -119,10 +119,14 @@ nmap <leader>gs :G<CR>
 nnoremap <Leader>ij :ImportJsFZF<CR>
 "Subversive 
 nmap <leader>ss <plug>(SubversiveSubstituteWordRange)
-"nmap <leader>sa<plug>(SubversiveSubvertWordRange)
+nmap <leader>sa<plug>(SubversiveSubvertWordRange)
 "CtrlSF Searcher
 nmap     <leader>c <Plug>CtrlSFPrompt
 nnoremap <C-F>o :CtrlSFOpen<CR>
+"React refactor 
+xmap <leader>r  <Plug>(coc-codeaction-selected)
+nmap <leader>r  <Plug>(coc-codeaction-selected)
+"let g:UltiSnipsExpandTrigger="<tab>"
 "" ================================================================= AUTO COMPLETE ==============================================================
 " Emmet config
 let g:user_emmet_leader_key=','
@@ -188,7 +192,7 @@ if (has("termguicolors"))
 endif
 autocmd BufWritePost,TextChanged,TextChangedI * call lightline#update()
 let g:lightline = {
-      \ 'colorscheme': 'nightowl',
+      \ 'colorscheme': 'oceanicnext',
       \   'active': {
       \     'left':[ [ 'mode', 'paste'],
       \              [ 'gitbranch', 'readonly', 'filename', 'modified' ],
