@@ -1,88 +1,144 @@
-snippet afn "Arrow function"
+
+snippet afc "Arrow function" b 
+const ${1} = (${2}) => {
+	${3}
+}
+endsnippet
+
+snippet afn "Arrow function" b 
 (${1}) => {
 	${2}
 }
 endsnippet
 
-snippet log "Basic console log"
-console.log('${1}')
+snippet af "Arrow function" b
+function(${1}) {
+	${2}
+}
 endsnippet
 
-snippet logg "Advanced console Log (params)"
-console.log('${1}', ${2:''})
+snippet log "Basic console log" b
+console.log(' 🚀  ${1}  ');
 endsnippet
 
-snippet deb "Debugger breakpoint"
-//DEBUGGER
-debugger;
+snippet logg "Advanced console Log (params)" 
+console.log(' 🚀  - ${1} ', ${2:${1}});
 endsnippet
 
-snippet imp "Import Es modules" b
+snippet de "Debugger breakpoint" b
+debugger
+endsnippet
+
+snippet imp "Import Es modules"
 import ${1} from '${2}';
 endsnippet
 
-snippet impn "Import named Es modules" b
-import {${1}} from '${2}';
+snippet impn "Import Es modules"
+import { ${1} } from '${2}';
+endsnippet
+#=========================================== LIT ===========================================  
+snippet litprop "Lit element basic prop" 
+${1}: {
+	type: ${2}
+}
 endsnippet
 
-snippet exp "Export Es modules" b
-export ${1} from '${2}';
+snippet litpropa "Lit element basic prop with attribute" 
+${1}: {
+	type: ${2},
+	attribute: ${3}
+}
 endsnippet
 
-snippet expn "Export named Es modules" b
-export {${1}} from '${2}';
-endsnippet
-
-"LIT ELEMENT
-snippet $$ "Lit element bind template"
+snippet $$ "Lit element bind template" 
 ${1}
 endsnippet
-
-snippet $$$ "Lit element bind template"
+snippet $$$ "Lit element bind template" 
 \`${1}\`
 endsnippet
 
-snippet lif "Lit element conditional"
+snippet lif "Lit element conditional" 
 	${${1:this.bool} ? html \`${2}\` : html \`${3}\`}
 endsnippet
 
-snippet litloop "Lit element loop template"
+snippet litloop "Lit element loop template" 
 ${${1:items}.map(${2:item} => html \`
 	${3}
 \`
 )}
 endsnippet
-
-snippet lithtml "Lit string template"
-html \`
-	${1}
-\`
-
+snippet upd "Update life cycle" 
+updated(changedProps) {
+	if (changedProps.has('${1}')) {
+		${2}
+	}
+}
+endsnippet
+snippet dispatch "Dispatch custom event" 
+this.dispatchEvent(new CustomEvent('${1:'event-name'}', {
+ detail: ${2:true},
+ bubbles: true,
+ composed: true
+}));
 endsnippet
 
-snippet dispatch "Dispatch custom event"
- this.dispatchEvent(new CustomEvent('${1:'event-name'}', {
- 	detail: ${2:true},
- 	bubbles: true,
- 	composed: true
- }));
+#================================REACT JS ===========================================
+
+snippet rcb "React Js base component" b
+import React from 'react';
+
+class ${1} extends React.Component {
+	render() {
+		return <h1>Hello}</h1>;
+	}
+}
+
+export default ${1};
+endsnippet
+
+snippet imr "Description" b
+import React from 'react';
+endsnippet
+
+snippet imrc "Description" b
+import React, {${1}} from 'react';
+endsnippet
+ 
+snippet imrs "Description" b
+import React, { useState } from 'react';
+endsnippet
+
+snippet ren "Description" 
+render() {
+  return (
+ 	${1}
+  );
+}
 endsnippet
 
 
-snippet litdemo "Lit element/html demo scaffold" 
-<bbva-core-demo-case heading="${1}">
-	<template>
-			<script type="module">
-				const { html, render, ${2} } = window.DemoHelpers;
-				const examples = () => html \`
-					${3}
-				\`;
-				render(examples(), document.querySelector('.demo'));
-			</script>
-			<div class="demo"></div>
-			</script>
-		</template>
-	</bbva-core-demo-case>
+#================================ JS/HTML ===========================================
+snippet p "JSX paragrapfh"
+<p>${1}</p>
 endsnippet
+
+snippet div "JSX container" 
+<div>${1}</div>
+endsnippet
+
+snippet h1 "JSX Header tag"  
+<h${1:1}>${2}</h${1:1}>
+endsnippet
+
+snippet att "Add attribute" 
+${1}='${2}'
+endsnippet
+
+snippet attr "Add JSX Attribute" 
+${1}='{${2}}'
+endsnippet
+#snippet prop "Add property" b
+#.${1}='${${2}}'
+#endsnippet
 
 

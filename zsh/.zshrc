@@ -1,6 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/malvarez/.oh-my-zsh"
-
+export ZSH=$HOME/.oh-my-zsh
 export CLICOLOR=1
 export TERM="xterm-256color"
 
@@ -13,7 +12,7 @@ ZSH_DISABLE_COMPFIX=true
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_MODE='powerline'
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=( node_version nvm dir vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(node_version nvm dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(todo)
 POWERLEVEL9K_HOME_ICON=''
 POWERLEVEL9K_HOME_SUB_ICON=''
@@ -29,7 +28,7 @@ VCS_GIT_ICON='Git'
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 plugins=(
    git
-   zsh-syntax-highlighting
+   # zsh-syntax-highlighting
    z)
    # zsh-autosuggestions
    source $ZSH/oh-my-zsh.sh
@@ -129,7 +128,7 @@ export EDITOR="nvim"
 export BASH="/usr/local/bin"
 export PATH=/opt/homebrew/bin:$PATH
 export NVM_DIR="$HOME/.nvm"
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
+ [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+ [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
