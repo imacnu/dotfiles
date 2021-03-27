@@ -29,7 +29,12 @@ highlight Special ctermbg=DarkMagenta
 autocmd FileType markdown setlocal spell
 autocmd FileType gitcommit setlocal spellA
 autocmd FileType markdown setlocal complete+=kspell
-autocmd FileType gitcommit setlocal complete+=kspell
+autocmd FileType gitcommit setlocal complete+=kspelluuu
+
+nmap <S-Enter> O<Esc>j
+nmap <CR> o<Esc>k
+"nnoremap o o<Esc>q
+"nnoremap O O<Esc>
 "================================================================ MAIN =============================================================================================
 " Mostrar mejor mensajes de error
 let g:ale_linters = {
