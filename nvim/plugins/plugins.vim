@@ -2,6 +2,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'MaxMEllon/vim-jsx-pretty' 
 Plug 'PsychoLlama/further.vim'
 Plug 'ryanoasis/vim-devicons'
+Plug 'rbong/vim-flog'
 Plug 'Yggdroot/indentLine'
 Plug 'acro5piano/import-js-from-history'
 Plug 'airblade/vim-gitgutter'

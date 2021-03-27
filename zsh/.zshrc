@@ -5,14 +5,15 @@ export TERM="xterm-256color"
 
 
 ZSH_DISABLE_COMPFIX=true
-
-
+#fpath+=$HOME/.zsh/pure
+#autoload -U promptinit; promptinit
+#prompt pure
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_MODE='powerline'
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(node_version nvm dir vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(nvm dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(todo)
 POWERLEVEL9K_HOME_ICON=''
 POWERLEVEL9K_HOME_SUB_ICON=''
@@ -28,9 +29,10 @@ VCS_GIT_ICON='Git'
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 plugins=(
    git
-   # zsh-syntax-highlighting
+   yarn
+   zsh-syntax-highlighting
+   zsh-autosuggestions
    z)
-   # zsh-autosuggestions
    source $ZSH/oh-my-zsh.sh
 
 #=====================ALIAS=====================================================

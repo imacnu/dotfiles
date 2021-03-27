@@ -108,7 +108,7 @@ nnoremap <leader>ss :SSave<CR>
 nnoremap <leader>sc :SClose<CR>
 noremap <silent> <leader>. :vertical resize +25<CR>
 noremap <silent> <leader>, :vertical resize -25<CR>
-noremap <silent> <leader>' :resize +25<CR>
+noremap <silent> <leader>; :resize +25<CR>
 noremap <silent> <leader>/ :resize -25<CR>
 "Linter -  go to next error
 "map <leader>ff :find 
