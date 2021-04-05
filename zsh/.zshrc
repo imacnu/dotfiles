@@ -84,7 +84,10 @@ alias ltestw="cells lit-component:test:watch"
 alias ltest='cells lit-component:test'
 alias llint="cells component:lint"
 alias gpr='f(){ git fetch origin refs/pull-requests/"$1"/from:"$2"; git checkout "$2";  unset -f f; }; f'
+alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
+alias glp='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit -p'
 #Docker
+
 alias rdocker="docker rm -fv \`docker ps -aq\`"
 #Vim
 alias v="nvim"

@@ -27,6 +27,7 @@ set softtabstop=0
 "set spelllang=en,es
 set tabstop=2
 set title
+set wildmenu
 if (has("termguicolors"))
  set termguicolors
 endif
@@ -36,7 +37,6 @@ augroup numbertoggle
   autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
-
 set guicursor=n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20
 highlight Comment ctermbg=DarkGray
 "highlight Constant ctermbg=Blue
@@ -64,15 +64,6 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 set updatetime=250
 " AutoPairskk 
 let g:AutoPairs={'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`','<':'>'}
-" CtrlP
-let g:ctrlp_working_path_mode = 'ra' 
-" Ignorar archivos en .gitignore
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.(git|hg|svn)|node_modules)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ }
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-let g:tagalong_filetypes = ['html', 'jsx', 'js', 'javascriptreact', 'typescriptreact']
 
 let mapleader=" "
 imap hh <Esc>
@@ -80,6 +71,7 @@ imap jj <Esc>
 imap kk <Esc>
 imap kk <Esc>
 imap jk <Esc>
+nmap <CR> o<Esc>
 nnoremap <C-p> :Files<CR>
 nnoremap <C-s> :w<CR>
 imap <C-s> <Esc>:w<CR>
@@ -152,6 +144,25 @@ let g:floaterm_keymap_kill = '<F12>'
 "nnoremap <leader>tt :FloatermNew --cmd="%:p:h"<CR>
 nnoremap <leader>zz :FloatermNew fzf<CR>
 nnoremap <leader>ee :FloatermNew vifm<CR>
+nmap <Leader>z [fzf-p]
+xmap <Leader>z [fzf-p]
+
+nnoremap <silent> [fzf-p]p     :<C-u>CocCommand fzf-preview.FromResources project_mru git<CR>
+nnoremap <silent> [fzf-p]gs    :<C-u>CocCommand fzf-preview.GitStatus<CR>
+nnoremap <silent> [fzf-p]ga    :<C-u>CocCommand fzf-preview.GitActions<CR>
+nnoremap <silent> [fzf-p]b     :<C-u>CocCommand fzf-preview.Buffers<CR>
+nnoremap <silent> [fzf-p]B     :<C-u>CocCommand fzf-preview.AllBuffers<CR>
+nnoremap <silent> [fzf-p]o     :<C-u>CocCommand fzf-preview.FromResources buffer project_mru<CR>
+nnoremap <silent> [fzf-p]<C-o> :<C-u>CocCommand fzf-preview.Jumps<CR>
+nnoremap <silent> [fzf-p]g;    :<C-u>CocCommand fzf-preview.Changes<CR>
+nnoremap <silent> [fzf-p]/     :<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="'"<CR>
+nnoremap <silent> [fzf-p]*     :<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="'<C-r>=expand('<cword>')<CR>"<CR>
+nnoremap          [fzf-p]gr    :<C-u>CocCommand fzf-preview.ProjectGrep<Space>
+xnoremap          [fzf-p]gr    "sy:CocCommand   fzf-preview.ProjectGrep<Space>-F<Space>"<C-r>=substitute(substitute(@s, '\n', '', 'g'), '/', '\\/', 'g')<CR>"
+nnoremap <silent> [fzf-p]t     :<C-u>CocCommand fzf-preview.BufferTags<CR>
+nnoremap <silent> [fzf-p]q     :<C-u>CocCommand fzf-preview.QuickFix<CR>
+nnoremap <silent> [fzf-p]l     :<C-u>CocCommand fzf-preview.LocationList<CR>
+
 
 let g:floaterm_gitcommit='floaterm'
 let g:floaterm_autoinsert=1
@@ -195,7 +206,7 @@ let g:lightline = {
       \ 'colorscheme': 'oceanicnext',
       \   'active': {
       \     'left':[ [ 'mode', 'paste'],
-      \              [ 'gitbranch', 'readonly', 'filename', 'modified' ],
+      \              [ 'gitbranch',  'fugitive', 'readonly', 'filename', 'modified' ],
       \     ]
       \   },
       \   'component': {
@@ -207,17 +218,16 @@ let g:lightline = {
       \ 'component_type': {
       \   'buffers': 'tabsel'
       \ },
-      \   'component_function': {
-      \     'gitbranch': 'fugitive#head'
-      \   },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
       \ }
 let g:lightline.separator = {
-	\   'left': '', 'right': ''
+  \   'left': '', 'right': ''
   \}
 let g:lightline.subseparator = {
-	\   'left': '', 'right': '|' 
+  \   'left': '', 'right': '|' 
   \}
-
 let g:lightline.tabline = {
   \   'left': [ ['tabs'], ],
   \   'right': [ ['buffers'] ]

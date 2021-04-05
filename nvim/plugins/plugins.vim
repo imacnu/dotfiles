@@ -17,7 +17,6 @@ Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 Plug 'iamcco/markdown-preview.nvim'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 Plug 'mattn/emmet-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'maximbaz/lightline-ale'
@@ -41,6 +40,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'voldikss/vim-floaterm'
 Plug 'wincent/ferret'
+Plug 'camspiers/animate.vim'
+Plug 'camspiers/lens.vim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'

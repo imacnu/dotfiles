@@ -36,7 +36,6 @@ nmap <CR> o<Esc>k
 "nnoremap o o<Esc>q
 "nnoremap O O<Esc>
 "================================================================ MAIN =============================================================================================
-" Mostrar mejor mensajes de error
 let g:ale_linters = {
 \   'javascript': ['eslint', 'standard'],
 \}
@@ -49,6 +48,7 @@ let g:ale_lint_on_save = 1
 let g:ale_linters_explicit = 1
 let g:ale_sign_error = '●'
 let g:ale_sign_warning = '.'
+let g:ale_completion_autoimport = 1
 
 function! LinterStatus() abort
     let l:counts = ale#statusline#Count(bufnr(''))
@@ -91,6 +91,10 @@ set updatetime=250
 " AutoPairskk 
 let g:AutoPairs={'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`','<':'>'}
 " CtrlP
+let g:ctrlp_working_path_mode = 'r' 
+" Ignorar archivos en .gitignore
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+let g:tagalong_filetypes = ['html', 'jsx', 'js', 'javascriptreact', 'typescriptreact']
 let g:ctrlp_working_path_mode = 2
 " Ignorar archivos en .gitignore
 let g:ctrlp_custom_ignore = {
@@ -100,3 +104,17 @@ let g:ctrlp_custom_ignore = {
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 "let g:indentLine_color_gui = '#A4E57E'
+"Ctrlsf config
+let g:ctrlsf_search_mode = 'async'"
+let g:ctrlsf_auto_close = {
+    \ "normal" : 1,
+    \ "compact": 1
+    \}
+let g:ctrlsf_auto_focus = {
+    \ "at": "start",
+     \ "duration_less_than": 1000
+     \ }
+let g:ctrlsf_default_root = 'project'
+let g:ctrlsf_default_view_mode = 'compact'
+let g:ctrlsf_position = 'bottom'
+let g:ctrlsf_winsize = '50'
