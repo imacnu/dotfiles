@@ -84,6 +84,15 @@ let g:ale_fixers = {
 let g:fzf_commands_expect = 'alt-enter'
 " Guardar historial de búsquedas
 let g:fzf_history_dir = '~/.local/share/fzf-history'
+" [Buffers] Jump to the existing window if possible
+let g:fzf_buffers_jump = 1
+" [[B]Commits] Customize the options used by 'git log':
+let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
+" [Tags] Command to generate tags file
+let g:fzf_tags_command = 'ctags -R'
+" [Commands] --expect expression for directly executing the command
+let g:fzf_commands_expect = 'alt-enter,ctrl-x'
+
 " Archivos ignorados
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 "Actualizar barra cada 250 mili segundos
@@ -93,7 +102,20 @@ let g:AutoPairs={'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`','<':'>'}
 " CtrlP
 let g:ctrlp_working_path_mode = 'r' 
 " Ignorar archivos en .gitignore
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+"let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co - exclude-standard', 'find %s -type f']
+let g:ctrlp_user_command = {
+\    'types': {
+\      1: [
+\        '.git',
+\        'cd %s &&
+\         git ls-files . -co --exclude-standard
+\         | awk ''{ print length, $0 }''
+\         | sort -n -s
+\         | cut -d" " -f2-'
+\      ],
+\    },
+\    'fallback': 'find %s -type f'
+\  }
 let g:tagalong_filetypes = ['html', 'jsx', 'js', 'javascriptreact', 'typescriptreact']
 let g:ctrlp_working_path_mode = 2
 " Ignorar archivos en .gitignore
@@ -101,7 +123,6 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](\.(git|hg|svn)|node_modules)$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ }
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 "let g:indentLine_color_gui = '#A4E57E'
 "Ctrlsf config

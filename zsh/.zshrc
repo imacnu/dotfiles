@@ -32,8 +32,9 @@ plugins=(
    yarn
    zsh-syntax-highlighting
    zsh-autosuggestions
+   zsh-vi-mode
    z)
-   source $ZSH/oh-my-zsh.sh
+source $ZSH/oh-my-zsh.sh
 
 #=====================ALIAS=====================================================
 #System
@@ -132,8 +133,10 @@ reborn () {
 export EDITOR="nvim"
 export BASH="/usr/local/bin"
 export PATH=/opt/homebrew/bin:$PATH
+#export NVM_DIR="$HOME/.nvm"
+ #[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+ #[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export NVM_DIR="$HOME/.nvm"
- [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
- [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+. "$(brew --prefix nvm)/nvm.sh"
