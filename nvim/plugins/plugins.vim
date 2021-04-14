@@ -1,4 +1,4 @@
-call plug#begin('~/.vim/plugged')
+call  plug#begin('~/.vim/plugged')
 Plug 'MaxMEllon/vim-jsx-pretty' 
 Plug 'PsychoLlama/further.vim'
 Plug 'ryanoasis/vim-devicons'

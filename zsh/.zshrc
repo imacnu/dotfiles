@@ -5,12 +5,6 @@ export TERM="xterm-256color"
 
 
 ZSH_DISABLE_COMPFIX=true
-#fpath+=$HOME/.zsh/pure
-#autoload -U promptinit; promptinit
-#prompt pure
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_MODE='powerline'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(nvm dir vcs)
@@ -25,14 +19,14 @@ OWERLEVEL9K_LEFT_SEGMENT_SEPARATOR=$'\uE0B0'
 POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=$'\uE0B2'
 VCS_TAG_ICON='\u263F'
 VCS_GIT_ICON='Git'
-#POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_last
+POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_last
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 plugins=(
    git
    yarn
    zsh-syntax-highlighting
-   zsh-autosuggestions
-   zsh-vi-mode
+   #zsh-autosuggestions
+   #zsh-vi-mode
    z)
 source $ZSH/oh-my-zsh.sh
 
@@ -66,7 +60,8 @@ alias xcode='open -a /Applications/Xcode.app'
 alias runMongo='mongod --config /usr/local/etc/mongod.conf'
 alias pserve='python -m SimpleHTTPServer 8000'
 alias weather='curl http://wttr.in/'
-alias lsf='ls | fzf'
+#alias lsf='ls | fzf'
+alias lsf='ls | $(fzf --preview "bat {-1} --color=always")'
 alias nsf='nvim $(fzf --preview "bat {-1} --color=always")'
 alias vsf='code $(fzf)'
 #CELLS
