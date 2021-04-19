@@ -1,4 +1,4 @@
-" Config 
+" Config
 source $HOME/.config/nvim/plugins/plugins.vim
 source $HOME/.config/nvim/main/main.vim
 source $HOME/.config/nvim/scheme/colors.vim
@@ -29,13 +29,13 @@ set tabstop=2
 set title
 set wildmenu
 if (has("termguicolors"))
- set termguicolors
+set termguicolors
 endif
 "Hybrid relative lines
 augroup numbertoggle
-  autocmd!
-  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+autocmd!
+autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
 set guicursor=n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20
 highlight Comment ctermbg=DarkGray
@@ -49,12 +49,7 @@ autocmd FileType gitcommit setlocal spell
 autocmd FileType markdown setlocal complete+=kspell
 autocmd FileType gitcommit setlocal complete+=kspell
 "================================================================ FZF =============================================================================================
-" Find files using Telescope command-line sugar.
-nnoremap <leader>tt <cmd>Telescope find_files<cr>
-nnoremap <leader>tg <cmd>Telescope live_grep<cr>
-nnoremap <leader>tb <cmd>Telescope buffers<cr>
-nnoremap <leader>th <cmd>Telescope help_tags<cr>
-"" Ejecutar comandos con alt-enter :Commands
+" Ejecutar comandos con alt-enter :Commands
 let g:fzf_commands_expect = 'alt-enter'
 " Guardar historial de búsquedas
 let g:fzf_history_dir = '~/.local/share/fzf-history'
@@ -62,7 +57,7 @@ let g:fzf_history_dir = '~/.local/share/fzf-history'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 "Actualizar barra cada 250 mili segundos
 set updatetime=250
-" AutoPairskk 
+" AutoPairskk
 let g:AutoPairs={'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`','<':'>'}
 
 let mapleader=" "
@@ -72,13 +67,12 @@ imap kk <Esc>
 imap kk <Esc>
 imap jk <Esc>
 nmap <CR> o<Esc>
-nnoremap <C-p> :Files<CR>
 nnoremap <C-s> :w<CR>
 imap <C-s> <Esc>:w<CR>
 nnoremap <C-d> <C-n>
 map <C-d> <C-n>
 imap <C-d> <C-n>
-nnoremap <leader>e :e $MYVIMRC<CR> 
+nnoremap <leader>e :e $MYVIMRC<CR>
 "No almancenar eliminados en buffer
 nnoremap m d
 xnoremap m d
@@ -87,11 +81,11 @@ nnoremap M D
 "Moverse entre pestañas (buffers)
 nnoremap <Leader>b :buffers<CR>:buffer<Space>
 nnoremap <leader>l :bnext<CR>
-nnoremap <leader>h :bprevious<CR> 
+nnoremap <leader>h :bprevious<CR>
 nnoremap <leader>q :bdelete<CR>
 "nnoremap <leader>t :tab split<CR>
 
-"Moverse entre ventanas/paneles 
+"Moverse entre ventanas/paneles
 nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
 nnoremap <C-l> <C-W>l
@@ -103,19 +97,22 @@ noremap <silent> <leader>, :vertical resize -25<CR>
 noremap <silent> <leader>; :resize +25<CR>
 noremap <silent> <leader>/ :resize -25<CR>
 "Linter -  go to next error
-"map <leader>ff :find 
+"map <leader>ff :find
+nnoremap <leader>p :Files<CR>
+nnoremap <leader>g :GFiles<CR>
+nnoremap <leader>o :Buffers<CR>
+nnoremap <leader>f :Ag
 map <C-e> :CocCommand explorer<CR>
 "Git status
 nmap <leader>gs :G<CR>
 " Available imports
 nnoremap <Leader>ij :ImportJsFZF<CR>
-"Subversive 
+"Subversive
 nmap <leader>ss <plug>(SubversiveSubstituteWordRange)
 nmap <leader>sa<plug>(SubversiveSubvertWordRange)
 "CtrlSF Searcher
 nmap     <leader>c <Plug>CtrlSFPrompt
-nnoremap <C-F>o :CtrlSFOpen<CR>
-"React refactor 
+"React refactor
 xmap <leader>r  <Plug>(coc-codeaction-selected)
 nmap <leader>r  <Plug>(coc-codeaction-selected)
 "let g:UltiSnipsExpandTrigger="<tab>"
@@ -123,7 +120,7 @@ nmap <leader>r  <Plug>(coc-codeaction-selected)
 " Emmet config
 let g:user_emmet_leader_key=','
 "let g:user_emmet_expandabbr_key = ','
-"imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>") 
+"imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
  "let g:user_emmet_install_global = 0
  "let g:user_emmet_mode='a'
  "autocmd FileType html,css EmmetInstall
@@ -144,25 +141,6 @@ let g:floaterm_keymap_kill = '<F12>'
 "nnoremap <leader>tt :FloatermNew --cmd="%:p:h"<CR>
 nnoremap <leader>zz :FloatermNew fzf<CR>
 nnoremap <leader>ee :FloatermNew vifm<CR>
-nmap <Leader>z [fzf-p]
-xmap <Leader>z [fzf-p]
-
-nnoremap <silent> [fzf-p]p     :<C-u>CocCommand fzf-preview.FromResources project_mru git<CR>
-nnoremap <silent> [fzf-p]gs    :<C-u>CocCommand fzf-preview.GitStatus<CR>
-nnoremap <silent> [fzf-p]ga    :<C-u>CocCommand fzf-preview.GitActions<CR>
-nnoremap <silent> [fzf-p]b     :<C-u>CocCommand fzf-preview.Buffers<CR>
-nnoremap <silent> [fzf-p]B     :<C-u>CocCommand fzf-preview.AllBuffers<CR>
-nnoremap <silent> [fzf-p]o     :<C-u>CocCommand fzf-preview.FromResources buffer project_mru<CR>
-nnoremap <silent> [fzf-p]<C-o> :<C-u>CocCommand fzf-preview.Jumps<CR>
-nnoremap <silent> [fzf-p]g;    :<C-u>CocCommand fzf-preview.Changes<CR>
-nnoremap <silent> [fzf-p]/     :<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="'"<CR>
-nnoremap <silent> [fzf-p]*     :<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="'<C-r>=expand('<cword>')<CR>"<CR>
-nnoremap          [fzf-p]gr    :<C-u>CocCommand fzf-preview.ProjectGrep<Space>
-xnoremap          [fzf-p]gr    "sy:CocCommand   fzf-preview.ProjectGrep<Space>-F<Space>"<C-r>=substitute(substitute(@s, '\n', '', 'g'), '/', '\\/', 'g')<CR>"
-nnoremap <silent> [fzf-p]t     :<C-u>CocCommand fzf-preview.BufferTags<CR>
-nnoremap <silent> [fzf-p]q     :<C-u>CocCommand fzf-preview.QuickFix<CR>
-nnoremap <silent> [fzf-p]l     :<C-u>CocCommand fzf-preview.LocationList<CR>
-
 
 let g:floaterm_gitcommit='floaterm'
 let g:floaterm_autoinsert=1
@@ -226,7 +204,7 @@ let g:lightline.separator = {
   \   'left': '', 'right': ''
   \}
 let g:lightline.subseparator = {
-  \   'left': '', 'right': '|' 
+  \   'left': '', 'right': '|'
   \}
 let g:lightline.tabline = {
   \   'left': [ ['tabs'], ],
@@ -260,8 +238,8 @@ endfunction
 
 let g:coc_snippet_next = '<tab>'
 " Formatting selected code.
-vmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+"vmap <leader>f  <Plug>(coc-format-selected)
+"nmap <leader>f  <Plug>(coc-format-selected)
 "======================================================================= STARTTIFY ==================================================================================
 
 function! s:gitModified()
@@ -311,3 +289,4 @@ let g:startify_custom_header = [
   \ '   ┗┛    ╹   ╹ ╹',
   \ '   ',
   \ ]
+

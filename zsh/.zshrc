@@ -64,6 +64,7 @@ alias weather='curl http://wttr.in/'
 alias lsf='ls | $(fzf --preview "bat {-1} --color=always")'
 alias nsf='nvim $(fzf --preview "bat {-1} --color=always")'
 alias vsf='code $(fzf)'
+alias -g Z='|fzf'
 #CELLS
 #polymer
 alias rep="open https://globaldevtools.bbva.com/bitbucket/"
@@ -83,7 +84,6 @@ alias gpr='f(){ git fetch origin refs/pull-requests/"$1"/from:"$2"; git checkout
 alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
 alias glp='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit -p'
 #Docker
-
 alias rdocker="docker rm -fv \`docker ps -aq\`"
 #Vim
 alias v="nvim"
