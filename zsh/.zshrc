@@ -125,7 +125,13 @@ reborn () {
    sleep 3
    done
 }
+
+sf() {
+  nvim $(ag -g $1 --hidden Z)
+}
+alias sf=sf()
 export EDITOR="nvim"
+
 export BASH="/usr/local/bin"
 export PATH=/opt/homebrew/bin:$PATH
 #export NVM_DIR="$HOME/.nvm"

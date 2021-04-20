@@ -115,6 +115,15 @@ nmap     <leader>c <Plug>CtrlSFPrompt
 "React refactor
 xmap <leader>r  <Plug>(coc-codeaction-selected)
 nmap <leader>r  <Plug>(coc-codeaction-selected)
+"Search and replace
+nnoremap <leader>S :lua require('spectre').open()<CR>
+"search current word
+nnoremap <leader>sw viw:lua require('spectre').open_visual()<CR>
+vnoremap <leader>s :lua require('spectre').open_visual()<CR>
+"  search in current file
+nnoremap <leader>sp viw:lua require('spectre').open_file_search()<cr>
+
+
 "let g:UltiSnipsExpandTrigger="<tab>"
 "" ================================================================= AUTO COMPLETE ==============================================================
 " Emmet config
@@ -275,12 +284,10 @@ let g:startify_bookmarks = [
             \ { 'f': '/Users/malvarez/Desktop/Components/bbva-web-components-fork' },
             \ { 'g': '/Users/malvarez/Desktop/Components/Glomo/glomo-pe' },
             \ { 'i': '~/.config/nvim/init.vim' },
-            \ { 'o': '~/.config/coc/ultisnips/javascript.snippets' },
-            \ { 's': '~/.config/coc/ultisnips/snippets.snippets' },
-            \ { 'v': '~/.config/coc/ultisnips/vim.snippets' },
+            \ { 's': '~/.config/coc/ultisnips/javascript.snippets' },
+            \ { 'p': '~/.config/nvim/plugins/plugins.vim' },
             \ { 'z': '~/.zshrc' },
             \ ]
-
 " Fancy custom header
 let g:startify_custom_header = [
   \ "  ",

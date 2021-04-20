@@ -16,12 +16,12 @@ function(${1}) {
 }
 endsnippet
 
-snippet log "Basic console log" b
-console.log('🚀 - ${1}', ${2});
+snippet log "Basic console log" 
+console.log(' 🚀  - ${1} ', ${2});
 endsnippet
 
 snippet logg "Advanced console Log (params)" 
-console.log(' 🚀  - ${1} ', ${2:${1}});
+console.log(' 🚀 - ${1} ', ${2:${1}});
 endsnippet
 
 snippet de "Debugger breakpoint" b
@@ -50,7 +50,7 @@ ${1}: {
 endsnippet
 
 snippet $$ "Lit element bind template" 
-${1}
+${1}='${${2}}'
 endsnippet
 snippet $$$ "Lit element bind template" 
 \`${1}\`

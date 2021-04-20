@@ -42,4 +42,7 @@ Plug 'voldikss/vim-floaterm'
 Plug 'wincent/ferret'
 Plug 'camspiers/animate.vim'
 Plug 'camspiers/lens.vim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-lua/popup.nvim'
+Plug 'windwp/nvim-spectre'
 call plug#end()

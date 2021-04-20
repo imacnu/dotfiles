@@ -124,7 +124,7 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll)$',
   \ }
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
-"let g:indentLine_color_gui = '#A4E57E'
+let g:indentLine_color_gui = '#A4E57E'
 "Ctrlsf config
 let g:ctrlsf_search_mode = 'async'"
 let g:ctrlsf_auto_close = {
