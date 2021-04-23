@@ -45,4 +45,5 @@ Plug 'camspiers/lens.vim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'windwp/nvim-spectre'
+Plug 'vim-syntastic/syntastic'
 call plug#end()

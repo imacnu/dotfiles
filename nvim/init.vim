@@ -48,6 +48,7 @@ autocmd FileType markdown setlocal spell
 autocmd FileType gitcommit setlocal spell
 autocmd FileType markdown setlocal complete+=kspell
 autocmd FileType gitcommit setlocal complete+=kspell
+
 "================================================================ FZF =============================================================================================
 " Ejecutar comandos con alt-enter :Commands
 let g:fzf_commands_expect = 'alt-enter'
@@ -168,6 +169,7 @@ set splitright
 set splitbelow
 tnoremap <Esc> <C-\><C-n>
 map <S-t> :vert :term<CR>
+
 " start terminal in insert mode
 au BufEnter * if &buftype == 'terminal' | :startinsert | endif
 " open terminal on ctrl+n
@@ -176,6 +178,8 @@ function! OpenTerminal()
   resize 10
 endfunction
 nnoremap <leader>n :call OpenTerminal()<CR>
+
+let g:toggleterm_terminal_mapping = '<C-t>'
 
 let g:airline#extensions#tabline#enabled = 1  " Mostrar buffers abiertos (como pestañas)
 let g:airline#extensions#tabline#fnamemod = ':t'  " Mostrar sólo el nombre del archivo
@@ -200,10 +204,10 @@ let g:lightline = {
       \     'lineinfo': ' %3l:%-2v',
       \   },
       \ 'component_expand': {
-      \   'buffers': 'lightline#bufferline#buffers'
+      \   'buffers': 'lightline#bufferline#buffers',
       \ },
       \ 'component_type': {
-      \   'buffers': 'tabsel'
+      \   'buffers': 'tabsel',
       \ },
       \ 'component_function': {
       \   'gitbranch': 'fugitive#head'
@@ -287,6 +291,7 @@ let g:startify_bookmarks = [
             \ { 's': '~/.config/coc/ultisnips/javascript.snippets' },
             \ { 'p': '~/.config/nvim/plugins/plugins.vim' },
             \ { 'z': '~/.zshrc' },
+            \ { 'r': '/Users/malvarez/qmk_firmware/keyboards/lily58/keymaps/custom-config/keymap.c' },
             \ ]
 " Fancy custom header
 let g:startify_custom_header = [

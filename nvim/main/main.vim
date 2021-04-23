@@ -80,7 +80,22 @@ let g:ale_fixers = {
 \   '*': ['trim_whitespace'],
 \   'javascript': ['prettier', 'eslint'],
 \}
-" Ejecutar comandos con alt-enter :Commands
+
+" Syntastic
+let g:syntastic_javascript_eslint_exe='$(npm bin)/eslint'
+let g:syntastic_javascript_checkers=['eslint']
+let g:syntastic_check_on_open = 1
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_wq = 0
+"let syntastic_mode_map = { 'passive_filetypes': ['html'] }
+let g:syntastic_html_tidy_ignore_errors=["<bbva-", "discarding unexpected </bbva-"]
+let g:syntastic_error_symbol = "\u2731"
+let g:syntastic_warning_symbol = "\u26A0"
+highlight SyntasticErrorSign guifg=#e74c3c guibg=red
+highlight SyntasticWarningSign guifg=#e74c3c guibg=red
+highlight SyntasticErrorLine guibg=#2f0000
+ " Ejecutar comandos con alt-enter :Commands
 let g:fzf_commands_expect = 'alt-enter'
 " Guardar historial de búsquedas
 let g:fzf_history_dir = '~/.local/share/fzf-history'
@@ -123,8 +138,9 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](\.(git|hg|svn)|node_modules)$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ }
-let g:indentLine_char_list = ['|', '¦', '┆', '┊']
-let g:indentLine_color_gui = '#A4E57E'
+"let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indentLine_char_list = ['.']
+"let g:indentLine_color_gui = '#A4E57E'
 "Ctrlsf config
 let g:ctrlsf_search_mode = 'async'"
 let g:ctrlsf_auto_close = {
