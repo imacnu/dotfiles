@@ -35,7 +35,7 @@ nmap <S-Enter> O<Esc>j
 nmap <CR> o<Esc>k
 "nnoremap o o<Esc>q
 "nnoremap O O<Esc>
-"================================================================ MAIN =============================================================================================
+"================================================================ LINTER =============================================================================================
 let g:ale_linters = {
 \   'javascript': ['eslint', 'standard'],
 \}
@@ -95,6 +95,8 @@ let g:syntastic_warning_symbol = "\u26A0"
 highlight SyntasticErrorSign guifg=#e74c3c guibg=red
 highlight SyntasticWarningSign guifg=#e74c3c guibg=red
 highlight SyntasticErrorLine guibg=#2f0000
+"================================================================= FZF ============================================================================
+
  " Ejecutar comandos con alt-enter :Commands
 let g:fzf_commands_expect = 'alt-enter'
 " Guardar historial de búsquedas
@@ -107,6 +109,13 @@ let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %
 let g:fzf_tags_command = 'ctags -R'
 " [Commands] --expect expression for directly executing the command
 let g:fzf_commands_expect = 'alt-enter,ctrl-x'
+function! s:find_git_root()
+  return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
+endfunction
+
+command! ProjectFiles execute 'Files' s:find_git_root()
+
+map <C-p> :ProjectFiles<CR>
 
 " Archivos ignorados
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
