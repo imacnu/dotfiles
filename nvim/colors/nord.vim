@@ -32,11 +32,11 @@ let s:nord11_gui = "#E74C3C"
 let s:nord12_gui = "#F9BF3B"
 let s:nord13_gui = "#EBCB8B"
 let s:nord14_gui = "#A3BE8C"
-let s:nord15_gui = "#c56cf0"
+let s:nord15_gui = "#9b59b6" 
 let s:nord16_gui = "#B48EAD"
 let s:nord17_gui = "#fffa65"
 let s:nord18_gui = "#fff200"
-let s:nord19_gui = "#33d9b2"
+let s:nord19_gui = "#16a085"
 
 let s:nord1_term = "0"
 let s:nord3_term = "8"
@@ -281,7 +281,7 @@ call s:hi("Comment", s:nord3_gui_bright, "", s:nord3_term, "", s:italicize_comme
 call s:hi("Conditional", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("Constant", s:nord4_gui, "", "NONE", "", "", "")
 call s:hi("Define", s:nord9_gui, "", s:nord9_term, "", "", "")
-call s:hi("Delimiter", s:nord6_gui, "", s:nord6_term, "", "", "")
+call s:hi("Delimiter", s:nord8_gui, "", s:nord6_term, "", "", "")
 call s:hi("Exception", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("Float", s:nord15_gui, "", s:nord15_term, "", "", "")
 call s:hi("Function", s:nord9_gui, "", s:nord8_term, "", "", "")

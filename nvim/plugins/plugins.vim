@@ -24,6 +24,7 @@ Plug 'mengelbrecht/lightline-bufferline'
 Plug 'metakirby5/codi.vim'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'mhartington/oceanic-next'
+Plug 'arcticicestudio/nord-vim'
 Plug 'mhinz/vim-startify'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'othree/html5.vim', { 'for': 'html' }

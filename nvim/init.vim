@@ -93,7 +93,7 @@ if (has("termguicolors"))
 endif
 autocmd BufWritePost,TextChanged,TextChangedI * call lightline#update()
 let g:lightline = {
-      \ 'colorscheme': 'oceanicnext',
+      \ 'colorscheme': 'nord',
       \   'active': {
       \     'left':[ [ 'mode', 'paste'],
       \              [ 'gitbranch',  'fugitive', 'readonly', 'filename', 'modified' ],
