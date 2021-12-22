@@ -46,7 +46,6 @@ autocmd FileType markdown setlocal spell
 autocmd FileType gitcommit setlocal spell
 autocmd FileType markdown setlocal complete+=kspell
 autocmd FileType gitcommit setlocal complete+=kspell
-
 " AutoPairskk
 let g:AutoPairs={'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`','<':'>'}
 "================================================================ FLOATERM =====================yy=================================================
@@ -78,7 +77,6 @@ endfunction
 nnoremap <leader>n :call OpenTerminal()<CR>
 
 let g:toggleterm_terminal_mapping = '<C-t>'
-
 "================================================================ AIRLINE ================================================
 let g:airline#extensions#tabline#enabled = 1  " Mostrar buffers abiertos (como pestañas)
 let g:airline#extensions#tabline#fnamemod = ':t'  " Mostrar sólo el nombre del archivo
@@ -201,4 +199,3 @@ let g:startify_custom_header = [
   \ '   ┗┛    ╹   ╹ ╹',
   \ '   ',
   \ ]
-

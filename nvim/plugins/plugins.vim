@@ -1,5 +1,6 @@
 call  plug#begin('~/.vim/plugged')
 Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'numkil/ag.nvim'
 Plug 'PsychoLlama/further.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'rbong/vim-flog'
@@ -13,7 +14,7 @@ Plug 'dense-analysis/ale'
 Plug 'dyng/ctrlsf.vim'
 Plug 'bagrat/vim-buffet'
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
-Plug 'iamcco/markdown-preview.nvim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -31,7 +32,6 @@ Plug 'othree/html5.vim', { 'for': 'html' }
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
-Plug 'rodrigore/coc-tailwind-intellisense', {'do': 'npm install'}
 Plug 'scrooloose/nerdcommenter'
 Plug 'sheerun/vim-polyglot'
 Plug 'skammer/vim-css-color'
@@ -40,11 +40,12 @@ Plug 'svermeulen/vim-subversive'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'voldikss/vim-floaterm'
-"Plug 'wincent/ferret'
 Plug 'camspiers/animate.vim'
 Plug 'camspiers/lens.vim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'windwp/nvim-spectre'
 Plug 'vim-syntastic/syntastic'
+Plug 'rhysd/accelerated-jk'
 call plug#end()
+

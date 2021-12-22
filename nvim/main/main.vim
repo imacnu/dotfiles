@@ -19,7 +19,7 @@ set spelllang=en,es
 set tabstop=2
 set title
 set clipboard=unnamedplus
-
+let g:mkdp_auto_start = 0
 set guicursor=n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20
 highlight Comment ctermbg=DarkGray
 highlight Constant ctermbg=Blue
@@ -95,6 +95,10 @@ let g:syntastic_warning_symbol = "\u26A0"
 highlight SyntasticErrorSign guifg=#e74c3c guibg=red
 highlight SyntasticWarningSign guifg=#e74c3c guibg=red
 highlight SyntasticErrorLine guibg=#2f0000
+
+"================================================================= ACCELERATED SCROLL ============================================================================
+nmap j <Plug>(accelerated_jk_gj)
+nmap k <Plug>(accelerated_jk_gk)
 "================================================================= FZF ============================================================================
 
  " Ejecutar comandos con alt-enter :Commands

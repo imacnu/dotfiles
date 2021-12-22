@@ -55,7 +55,7 @@ alias dtags="git push origin master :refs/tags/"
 alias graph="git log --tags --pretty --decorate --graph --all"
 alias geturl="git remote get-url origin"
 alias gdbranches="git branch | grep -v "master" | xargs git branch -D"
-#Apps
+#App
 alias xcode='open -a /Applications/Xcode.app'
 alias runMongo='mongod --config /usr/local/etc/mongod.conf'
 alias pserve='python -m SimpleHTTPServer 8000'
@@ -139,5 +139,6 @@ export PATH=/opt/homebrew/bin:$PATH
  #[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 #[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export JAVA_HOME=$(/usr/libexec/java_home)
 export NVM_DIR="$HOME/.nvm"
 . "$(brew --prefix nvm)/nvm.sh"
